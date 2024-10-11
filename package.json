@@ -10,7 +10,8 @@
   "dependencies": {
     "@types/node": "^20.14.2",
     "axios": "^1.6.7",
-    "dotenv": "^16.4.5"
+    "dotenv": "^16.4.5",
+    "jetty": "^0.2.1"
   },
   "devDependencies": {
     "@types/jest": "^29.5.12",
