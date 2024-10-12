@@ -1,0 +1,15 @@
+{
+  "width": 10,
+  "height": 10,
+  "displays": [
+    {
+      "active": true,
+      "type": "console"
+    },
+    {
+      "active": false,
+      "type": "wled",
+      "host": "192.168.0.100"
+    }
+  ]
+}

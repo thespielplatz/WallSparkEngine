@@ -1,22 +1,14 @@
 console.info('WLED UDP Control!')
 
-import Animation from './lib/Animation'
-import MovingPixel from './lib/MovingPixel'
-import ConsoleRenderer from './lib/renderer/ConsoleRenderer'
-import TetrisAnimation from './lib/TetrisAnimation'
-import UDPSender from './lib/UDPSender'
+import App from './lib/App'
+import { Config } from './lib/Config'
 
-const width = 50
-const height = 5
-const numberOfPixels = width * height
-const animation: Animation = new MovingPixel(width, height)
+import MovingPixel from './lib/animations/MovingPixel'
 
-const sleep = (timeout:number) => new Promise(res => setTimeout(res, timeout))
-
+/*
 const port = 21324
 const host = '192.168.1.121'
 const sender = new UDPSender(host, port)
-const consoleRenderer = new ConsoleRenderer({ width, height, brightness: 255 })
 
 const byte0 = 2
 const byte1 = 2
@@ -35,12 +27,12 @@ const sendData = async () => {
 
   await sender.send(message)
 }
+*/
+
+const config = new Config()
+const app = new App(config.config)
+app.setAnimation(new MovingPixel(config.config.width, config.config.height))
 
 ;(async () => {
-  while (true) {
-    animation.nextFrame()
-    consoleRenderer.render(animation.pixels)
-    //await sendData()
-    await sleep(50)
-  }
+  await app.run()
 })()

@@ -1,4 +1,4 @@
-import Animation from './Animation'
+import Animation from './animations/Animation'
 
 export default class TetrisAnimation extends Animation {
   activeBlock: { shape: number[], position: { x: number, y: number } }

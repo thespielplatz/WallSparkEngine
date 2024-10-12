@@ -9,7 +9,6 @@ export default class ConsoleRenderer extends AbstractRenderer {
   constructor(params: { width: number, height: number, brightness: number }) {
     super(params)
     console.info('ConsoleRenderer init')
-    console.info('ConsoleRenderer init')
 
     this.jetty = new Jetty(process.stdout)
     this.jetty.reset().clear().moveTo([0,0])
