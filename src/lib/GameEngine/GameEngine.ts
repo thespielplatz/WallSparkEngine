@@ -1,5 +1,6 @@
-import Animation from '../animations/Animation'
 import { type ConfigSchema } from '../Config'
+import { GameObject } from './modules/GameObject'
+import PixelBuffer from './modules/PixelBuffer'
 import AbstractRenderer from './renderer/AbstractRenderer'
 import ConsoleRenderer from './renderer/ConsoleRenderer'
 import WledRenderer from './renderer/WledRenderer/WledRenderer'
@@ -8,24 +9,24 @@ const sleep = (timeout:number) => new Promise(res => setTimeout(res, timeout))
 
 export default class GameEngine {
   private renderer: AbstractRenderer[] = []
-  private animation: Animation | null = null
   private fps = 60
   private frameDuration = 1000 / this.fps
+  private gameObject: GameObject[] = []
+  private pixelBuffer: PixelBuffer
 
   private config: ConfigSchema
   constructor(config: ConfigSchema) {
     this.config = config
-    this.initRenderer()
-  }
-
-  public setAnimation(animation: Animation) {
-    this.animation = animation
+    this.pixelBuffer = new PixelBuffer(config.width, config.height)
+    this.initRenderers()
   }
 
   async run() {
     while (true) {
       const start = performance.now()
 
+      await this.update()
+      await this.draw()
       await this.render()
 
       const end = performance.now()
@@ -36,7 +37,11 @@ export default class GameEngine {
     }
   }
 
-  private initRenderer() {
+  public addGameObject(gameObject: GameObject) { 
+    this.gameObject.push(gameObject)
+  }
+
+  private initRenderers() {
     this.config.displays.forEach(display => {
       if (display.active === false) {
         return
@@ -64,14 +69,24 @@ export default class GameEngine {
     })
   }
 
-  private async render() {
-    if (this.animation != null) {
-      this.animation.nextFrame()
-      await Promise.all(
-        this.renderer.map(renderer => {
-          renderer.render(this.animation?.pixels || [])
-        })
-      )
+  private async update() {
+    for (let gameObject of this.gameObject) {
+      await gameObject.update()
     }
+  }
+
+  private async draw() {
+    this.pixelBuffer.clear()
+    for (let gameObject of this.gameObject) {
+      await gameObject.draw(this.pixelBuffer)
+    }    
+  }
+
+  private async render() {
+    await Promise.all(
+      this.renderer.map(renderer => {
+        renderer.render(this.pixelBuffer.getPixelData())
+      })
+    )
   }
 }

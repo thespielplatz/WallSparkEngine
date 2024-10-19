@@ -1,12 +1,15 @@
-import Animation from './animations/Animation'
-
-export default class TetrisAnimation extends Animation {
+export default class TetrisAnimation {
+  pixels: number[]
+  width: number
+  height: number
   activeBlock: { shape: number[], position: { x: number, y: number } }
   speed: number
   interval: number
 
   constructor(width: number, height: number, speed: number) {
-    super(width, height)
+    this.width = width
+    this.height = height
+    this.pixels = new Array(width * height).fill(0)
     this.speed = speed
     this.interval = 0
     this.activeBlock = { shape: [], position: { x: 0, y: 0 } }
