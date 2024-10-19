@@ -9,15 +9,7 @@ export default class AbstractRenderer {
     this.brightness = params.brightness
   }
 
-  init() {
-    console.warn('This is just a stub, implement in actual class.')
-  }
-
-  deinit() {
-    console.warn('This is just a stub, implement in actual class.')
-  }
-
-  render(pixelData: number[]) {
-    console.warn('This is just a stub, implement in actual class.', pixelData)
+  async render(pixelData: number[]) {
+    new Error('This is just a stub, implement in actual class.')
   }
 }

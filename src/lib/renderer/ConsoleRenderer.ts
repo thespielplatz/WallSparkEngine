@@ -14,15 +14,7 @@ export default class ConsoleRenderer extends AbstractRenderer {
     this.jetty.reset().clear().moveTo([0,0])
   }
 
-  init() {
-    // Do Nothing
-  }
-
-  deinit() {
-    // Do Nothing
-  }
-
-  render(pixelData: number[]) {
+  async render(pixelData: number[]) {
     for (let i = 0; i < pixelData.length; i++) {
       let charWidth = 0
       let x = 0

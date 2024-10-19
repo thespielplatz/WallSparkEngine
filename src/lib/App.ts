@@ -24,13 +24,14 @@ export default class App {
     while (true) {
       if (this.animation != null) {
         this.animation.nextFrame()
-        this.renderer.forEach(renderer => {
-          renderer.render(this.animation?.pixels || [])
-        })
+        await Promise.all(
+          this.renderer.map(renderer => {
+            renderer.render(this.animation?.pixels || [])
+          })
+        )
       }
       await sleep(50)
     }
-  
   }
 
   private initRenderer() {
