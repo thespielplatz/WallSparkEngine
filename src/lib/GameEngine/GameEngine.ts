@@ -1,5 +1,5 @@
 import { type ConfigSchema } from '../Config'
-import { GameObject } from './modules/GameObject'
+import GameObject from './modules/GameObject'
 import PixelBuffer from './modules/PixelBuffer'
 import AbstractRenderer from './renderer/AbstractRenderer'
 import ConsoleRenderer from './renderer/ConsoleRenderer'

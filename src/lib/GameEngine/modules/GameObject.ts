@@ -1,6 +1,6 @@
 import PixelBuffer from './PixelBuffer'
 
-export class GameObject {
+export default class GameObject {
   public x: number
   public y: number
 

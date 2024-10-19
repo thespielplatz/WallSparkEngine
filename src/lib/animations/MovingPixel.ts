@@ -1,4 +1,4 @@
-import { GameObject } from '../GameEngine/modules/GameObject'
+import GameObject from '../GameEngine/modules/GameObject'
 import PixelBuffer from '../GameEngine/modules/PixelBuffer'
 
 export default class MovingPixel extends GameObject {
