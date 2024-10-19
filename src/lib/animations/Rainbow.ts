@@ -11,11 +11,10 @@ export default class Rainbow extends GameObject {
   private speed: number
   private brightnessFactor: number
 
-  constructor(params: { x: number, y: number, width: number, height: number }) {
-    super({ x: params.x, y: params.y })
-
-    this.width = params.width
-    this.height = params.height
+  constructor({ x, y, width, height }: { x: number, y: number, width: number, height: number }) {
+    super({ x, y })
+    this.width = width
+    this.height = height
     this.numberOfPixels = this.width * this.height
     this.brightnessFactor = 1.0
     this.speed = 1.0

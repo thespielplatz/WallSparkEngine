@@ -4,9 +4,9 @@ export default class GameObject {
   public x: number
   public y: number
 
-  constructor(params: { x: number, y: number }) {
-    this.x = params.x
-    this.y = params.y
+  constructor({ x, y }: { x: number, y: number }) {
+    this.x = x
+    this.y = y
   }
 
   public async update() {

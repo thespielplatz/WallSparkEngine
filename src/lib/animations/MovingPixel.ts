@@ -7,10 +7,10 @@ export default class MovingPixel extends GameObject {
   private height
   private numberOfPixels
 
-  constructor(params: { x: number, y: number, width: number, height: number }) {
-    super({ x: params.x, y: params.y })
-    this.width = params.width
-    this.height = params.height
+  constructor({ x, y, width, height }: { x: number, y: number, width: number, height: number }) {
+    super({ x, y })
+    this.width = width
+    this.height = height
     this.numberOfPixels = this.width * this.height
   }
 
