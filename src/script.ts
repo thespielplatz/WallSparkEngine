@@ -1,15 +1,15 @@
 console.info('WLED UDP Control!')
 
-import App from './lib/App'
+import GameEngine from './lib/GameEngine/GameEngine'
 import { Config } from './lib/Config'
 
 import MovingPixel from './lib/animations/MovingPixel'
 
 const config = new Config()
-const app = new App(config.config)
+const gameEngine = new GameEngine(config.config)
 
-app.setAnimation(new MovingPixel(config.config.width, config.config.height))
+gameEngine.setAnimation(new MovingPixel(config.config.width, config.config.height))
 
 ;(async () => {
-  await app.run()
+  await gameEngine.run()
 })()

@@ -1,5 +1,5 @@
-import UDPSender from '../modules/UDPSender'
-import AbstractRenderer from './AbstractRenderer'
+import UDPSender from './modules/UDPSender'
+import AbstractRenderer from '../AbstractRenderer'
 
 
 export default class WledRenderer extends AbstractRenderer {

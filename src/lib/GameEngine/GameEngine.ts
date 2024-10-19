@@ -1,14 +1,16 @@
-import Animation from './animations/Animation'
-import { type ConfigSchema } from './Config'
+import Animation from '../animations/Animation'
+import { type ConfigSchema } from '../Config'
 import AbstractRenderer from './renderer/AbstractRenderer'
 import ConsoleRenderer from './renderer/ConsoleRenderer'
-import WledRenderer from './renderer/WledRenderer'
+import WledRenderer from './renderer/WledRenderer/WledRenderer'
 
 const sleep = (timeout:number) => new Promise(res => setTimeout(res, timeout))
 
-export default class App {
+export default class GameEngine {
   private renderer: AbstractRenderer[] = []
   private animation: Animation | null = null
+  private fps = 60
+  private frameDuration = 1000 / this.fps
 
   private config: ConfigSchema
   constructor(config: ConfigSchema) {
@@ -22,15 +24,15 @@ export default class App {
 
   async run() {
     while (true) {
-      if (this.animation != null) {
-        this.animation.nextFrame()
-        await Promise.all(
-          this.renderer.map(renderer => {
-            renderer.render(this.animation?.pixels || [])
-          })
-        )
+      const start = performance.now()
+
+      await this.render()
+
+      const end = performance.now()
+      const frameTime = end - start
+      if (frameTime < this.frameDuration) {
+        await sleep(this.frameDuration - frameTime)
       }
-      await sleep(50)
     }
   }
 
@@ -48,6 +50,7 @@ export default class App {
             brightness: this.config.brightness,
            }))
           break
+
         case 'wled':
           this.renderer.push(new WledRenderer({ 
             width: this.config.width, 
@@ -59,5 +62,16 @@ export default class App {
           break
       }
     })
+  }
+
+  private async render() {
+    if (this.animation != null) {
+      this.animation.nextFrame()
+      await Promise.all(
+        this.renderer.map(renderer => {
+          renderer.render(this.animation?.pixels || [])
+        })
+      )
+    }
   }
 }
