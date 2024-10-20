@@ -1,4 +1,4 @@
-import PixelBuffer from './PixelBuffer'
+import PixelBuffer from '../drawing/PixelBuffer'
 
 export default class GameObject {
   public x: number

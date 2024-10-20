@@ -1,4 +1,4 @@
-import GameObject from './GameObject'
+import GameObject from '../gameObjects/GameObject'
 
 export default class PixelBuffer {
   private width: number

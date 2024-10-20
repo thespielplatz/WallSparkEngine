@@ -1,6 +1,6 @@
 import { type ConfigSchema } from '../Config'
-import GameObject from './modules/GameObject'
-import PixelBuffer from './modules/PixelBuffer'
+import GameObject from './gameObjects/GameObject'
+import PixelBuffer from './drawing/PixelBuffer'
 import AbstractRenderer from './renderer/AbstractRenderer'
 import ConsoleRenderer from './renderer/ConsoleRenderer'
 import WledRenderer from './renderer/WledRenderer/WledRenderer'

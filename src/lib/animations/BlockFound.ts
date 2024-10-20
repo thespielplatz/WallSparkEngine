@@ -1,5 +1,5 @@
-import GameObject from '../GameEngine/modules/GameObject'
-import PixelBuffer from '../GameEngine/modules/PixelBuffer'
+import GameObject from '../GameEngine/gameObjects/GameObject'
+import PixelBuffer from '../GameEngine/drawing/PixelBuffer'
 
 let colors = [0xFFFFFF, 0x101010, 0xFF8800, 0x909090, 0x050505]
 

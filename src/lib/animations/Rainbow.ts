@@ -1,5 +1,5 @@
-import GameObject from '../GameEngine/modules/GameObject'
-import PixelBuffer from '../GameEngine/modules/PixelBuffer'
+import GameObject from '../GameEngine/gameObjects/GameObject'
+import PixelBuffer from '../GameEngine/drawing/PixelBuffer'
 
 export default class Rainbow extends GameObject {
   private width
@@ -11,13 +11,13 @@ export default class Rainbow extends GameObject {
   private speed: number
   private brightnessFactor: number
 
-  constructor({ x, y, width, height }: { x: number, y: number, width: number, height: number }) {
+  constructor({ x, y, width, height, speed = 1.0 }: { x: number, y: number, width: number, height: number, speed?: number }) {
     super({ x, y })
     this.width = width
     this.height = height
     this.numberOfPixels = this.width * this.height
     this.brightnessFactor = 1.0
-    this.speed = 1.0
+    this.speed = speed
     this.offset = 0
     this.floatOffset = 0
   }
