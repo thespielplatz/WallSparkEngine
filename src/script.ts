@@ -9,28 +9,29 @@ import Rainbow from './lib/animations/Rainbow'
 
 const config = new Config()
 const gameEngine = new GameEngine(config.config)
-
-gameEngine.addGameObject(new Rainbow({
+const rainbow = new Rainbow({
   x: 0,
   y: 0,
   width: config.config.width,
   height: config.config.height,
-}))
-
-gameEngine.addGameObject(new MovingPixel({
+})
+const movingPixel = new MovingPixel({
   x: 0,
   y: 0,
   width: config.config.width,
   height: config.config.height,
-}))
-
-gameEngine.addGameObject(new BlockFound({
-  x: 0,
+})
+const blockFound = new BlockFound({
+  x: 10,
   y: 0,
   width: config.config.width,
   height: config.config.height,
   //speed: 0.5,
-}))
+})
+
+//gameEngine.addGameObject(rainbow)
+//gameEngine.addGameObject(movingPixel)
+gameEngine.addGameObject(blockFound)
 
 ;(async () => {
   await gameEngine.run()

@@ -78,6 +78,7 @@ export default class GameEngine {
   private async draw() {
     this.pixelBuffer.clear()
     for (let gameObject of this.gameObject) {
+      this.pixelBuffer.transform(gameObject)
       await gameObject.draw(this.pixelBuffer)
     }    
   }
