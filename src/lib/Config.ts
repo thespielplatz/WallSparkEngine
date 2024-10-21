@@ -8,6 +8,7 @@ const ConsoleSchema = z.object({
 })
 
 const WledSchema = z.object({
+  name: z.string().optional(),
   active: z.boolean().default(true),
   type: z.literal('wled'), 
   host: z.string(),

@@ -61,6 +61,7 @@ export default class GameEngine {
             width: this.config.width, 
             height: this.config.height, 
             brightness: this.config.brightness,
+            name: display.name,
             host: display.host, 
             port: display.port,
            }))

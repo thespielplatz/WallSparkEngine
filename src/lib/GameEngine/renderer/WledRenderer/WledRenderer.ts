@@ -1,24 +1,24 @@
 import UDPSender from './modules/UDPSender'
 import AbstractRenderer from '../AbstractRenderer'
 
-
 export default class WledRenderer extends AbstractRenderer {
   private udpSender: UDPSender
   private messageBuffer: Buffer
 
-  constructor(params: { 
+  constructor({name, host, port, width, height, brightness}: { 
+    name?: string,
     host: string,
     port: number,
     width: number, 
     height: number, 
     brightness: number 
   }) {
-    super(params)
-    console.info(`WledRenderer connecting to ${params.host}:${params.port}`)
+    super({ width, height, brightness})
+    console.info(`Connecting WledRenderer ${name ? `(${name}) ` : ''}@ ${host}:${port}`)
 
-    this.udpSender = new UDPSender(params.host, params.port)
+    this.udpSender = new UDPSender(host, port)
 
-    const numberOfPixels = params.width * params.height
+    const numberOfPixels = width * height
     const bufferSize = 2 + numberOfPixels * 3
     this.messageBuffer = Buffer.alloc(bufferSize)
     
