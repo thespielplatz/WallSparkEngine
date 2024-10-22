@@ -1,15 +1,14 @@
 {
-  "name": "simple-typescript-boilerplate",
-  "author": "Satoshi Engineering",
+  "name": "wall-spark-engine",
+  "author": "Philipp Horwath",
   "license": "MIT",
-  "description": "Simple Typescript boilerplate with env and axios",
+  "description": "a WLED Pixel Display Render/Game Engine",
   "scripts": {
     "script": "npx ts-node ./src/script.ts",
     "test": "jest --config ./jest.config.js ./tests/units"
   },
   "dependencies": {
     "@types/node": "^20.14.2",
-    "axios": "^1.6.7",
     "dotenv": "^16.4.5",
     "jetty": "^0.2.1",
     "zod": "^3.23.8"
