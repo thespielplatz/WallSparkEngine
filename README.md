@@ -2,7 +2,7 @@
 
 [![MIT License Badge](docs/img/license-badge.svg)](LICENSE)
 
-WallSpark is a tool for controlling and animating wall-mounted pixel displays, built with Vue3 and Nuxt, and designed to seamlessly control [WLED](https://kno.wled.ge/). With a user-friendly interface, it allows real-time creation, customization, and animation of pixel art.
+The WallSpark Engine is a versatile pixel rendering and game engine designed for creating stunning animations or interactive games on wall-mounted pixel displays. It integrates effortlessly with [WLED](https://kno.wled.ge/) for seamless control and vibrant visual effects.
 
 ## Roadmap
 
