@@ -1,15 +1,15 @@
 {
   "name": "wall-spark-engine",
+  "version": "0.0.1",
   "author": "Philipp Horwath",
   "license": "MIT",
   "description": "a WLED Pixel Display Render/Game Engine",
   "scripts": {
-    "script": "npx ts-node ./src/script.ts",
+    "example-clock": "npx tsx ./examples/clock/script.ts",
     "test": "jest --config ./jest.config.js ./tests/units"
   },
   "dependencies": {
     "@types/node": "^20.14.2",
-    "dotenv": "^16.4.5",
     "jetty": "^0.2.1",
     "zod": "^3.23.8"
   },
@@ -17,7 +17,7 @@
     "@types/jest": "^29.5.12",
     "@types/mocha": "^10.0.6",
     "ts-jest": "^29.1.2",
-    "ts-node": "^10.9.2",
+    "tsx": "^4.19.1",
     "typescript": "^5.4.2"
   }
 }

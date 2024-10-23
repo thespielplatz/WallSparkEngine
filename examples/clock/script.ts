@@ -1,12 +1,12 @@
-console.info('WLED UDP Control!')
+console.info('Example Clock!')
 
-import GameEngine from './lib/GameEngine/GameEngine'
-import { Config } from './lib/Config'
+import GameEngine from '@/GameEngine/GameEngine'
+import { Config } from '@/GameEngine/Config'
 
-import MovingPixel from './lib/animations/MovingPixel'
-import BlockFound from './lib/animations/BlockFound'
-import Rainbow from './lib/animations/Rainbow'
-import Time from './lib/animations/Time'
+import MovingPixel from '@/Animations/MovingPixel'
+import BlockFound from '@/Animations/BlockFound'
+import Rainbow from '@/Animations/Rainbow'
+import Time from '@/Animations/Time'
 
 const config = new Config()
 const gameEngine = new GameEngine(config.config)
@@ -31,14 +31,14 @@ const blockFound = new BlockFound({
   //speed: 0.5,
 })
 
-gameEngine.addGameObject(rainbow)
-gameEngine.addGameObject(movingPixel)
+//gameEngine.addGameObject(rainbow)
+//gameEngine.addGameObject(movingPixel)
 //gameEngine.addGameObject(blockFound)
 
 const time = new Time({
   x: 0,
   y: 0,
-  showSeconds: true,
+  showSeconds: false,
 })
 time.centerOnWidth(config.config.width)
 

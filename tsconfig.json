@@ -1,12 +1,14 @@
 {
-  "ts-node": {
-    "files": true
-  },
+  "exclude": ["node_modules", "build", "test"],
   "compilerOptions": {
     "target": "ES2022",
     "lib": ["ES2022"],
     "module": "commonjs",
-    "rootDir": "./src",                                  /* Specify the root folder within your source files. */
+    "baseUrl": ".", // This sets the base directory for resolving non-relative module imports
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "rootDir": ".", /* Specify the root folder within your source files. */
     "outDir": "./dist",
     "moduleResolution": "node",
     "types": ["node", "jest"],
