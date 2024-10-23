@@ -4,8 +4,8 @@ import GameEngine from '@/GameEngine/GameEngine'
 import { Config } from '@/GameEngine/Config'
 
 import Time from '@/Animations/Time'
-import { SateLogo } from './logos/SateLogo'
-import { MinervaLogo } from './logos/MinervaLogo'
+import { SateLogo } from '../lib/logos/SateLogo'
+import { MinervaLogo } from '../lib/logos/MinervaLogo'
 
 const config = new Config()
 const gameEngine = new GameEngine(config.config)
@@ -13,7 +13,6 @@ const gameEngine = new GameEngine(config.config)
 const time = new Time({
   x: 0,
   y: 0,
-  showSeconds: false,
 })
 time.centerOnWidth(config.config.width)
 

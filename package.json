@@ -7,10 +7,12 @@
   "scripts": {
     "example-basic": "npx tsx ./examples/basic/script.ts",
     "example-lab10-clock": "npx tsx ./examples/lab10-clock/script.ts",
+    "example-blockclock": "npx tsx ./examples/blockclock/script.ts",
     "test": "jest --config ./jest.config.js ./tests/units"
   },
   "dependencies": {
     "@types/node": "^20.14.2",
+    "axios": "^1.7.7",
     "jetty": "^0.2.1",
     "zod": "^3.23.8"
   },
