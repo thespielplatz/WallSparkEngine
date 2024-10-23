@@ -9,11 +9,11 @@ The Wall Spark Engine is a versatile pixel rendering and game engine designed fo
 - **Milestone lab10** - Display the time & add a background image
 - **Milestone BlockClock** - Add the same functionality of BlockClock code of [BlockClock Repo](https://github.com/thespielplatz/tspi-blockclock)
 - **Milestone Web UI** - t.b.d.
+- **Milestone Example: Tetris Game with Socket.games** - t.b.d.
 
 Too see the full roadmap or the milestones more in detail --> [Roadmap page](https://thespielplatz.notion.site/Wall-Spark-Roadmap-11a5896652c4805589b2e5b6cde2bb28) (*Single source of truth*).
 
 ## How to run
-
 
 *This section is a first draft, because "how to run" was not thought yet.*
 
