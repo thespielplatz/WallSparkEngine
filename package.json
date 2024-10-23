@@ -5,6 +5,7 @@
   "license": "MIT",
   "description": "a WLED Pixel Display Render/Game Engine",
   "scripts": {
+    "example-basic": "npx tsx ./examples/basic/script.ts",
     "example-clock": "npx tsx ./examples/clock/script.ts",
     "test": "jest --config ./jest.config.js ./tests/units"
   },

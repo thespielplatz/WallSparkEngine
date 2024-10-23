@@ -14,8 +14,10 @@ Too see the full roadmap or the milestones more in detail --> [Roadmap page](htt
 
 ## How to run
 
+
 *This section is a first draft, because "how to run" was not thought yet.*
 
+### Setup
 
 - Setup you display with [WLED](https://kno.wled.ge/) and connect it to the same wifi
 - install node lts
@@ -26,12 +28,18 @@ npm i
 cp config.json.example config.json
 ```
 
-- Change the `host` in `config.json` with the ip address of your wled display.
-- Change active to true
+### Run output on console
+
+The default config in config.json.example is to run the output in the console. Run the basic example from example directory:
 
 ```bash
-npm run script
+npm run example-basic
 ```
+
+### Run output on WLED display
+
+- Change the `host` in `config.json` with the ip address of your wled display.
+- Change `active` to `true`
 
 ## Support
 
