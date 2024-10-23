@@ -6,7 +6,7 @@
   "description": "a WLED Pixel Display Render/Game Engine",
   "scripts": {
     "example-basic": "npx tsx ./examples/basic/script.ts",
-    "example-clock": "npx tsx ./examples/clock/script.ts",
+    "example-lab10-clock": "npx tsx ./examples/lab10-clock/script.ts",
     "test": "jest --config ./jest.config.js ./tests/units"
   },
   "dependencies": {
