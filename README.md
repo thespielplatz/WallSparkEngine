@@ -18,16 +18,16 @@ Too see the full roadmap or the milestones more in detail --> [Roadmap page](htt
 
 
 - Setup you display with [WLED](https://kno.wled.ge/) and connect it to the same wifi
-- install npm
-- install lts of node
+- install node lts
 
 ```bash
-git clone git@github.com:thespielplatz/WallSpark.git
+git clone git@github.com:thespielplatz/WallSparkEngine.git
 npm i
 cp config.json.example config.json
 ```
 
 - Change the `host` in `config.json` with the ip address of your wled display.
+- Change active to true
 
 ```bash
 npm run script
