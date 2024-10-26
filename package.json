@@ -5,13 +5,15 @@
   "license": "MIT",
   "description": "a WLED Pixel Display Render/Game Engine",
   "scripts": {
+    "audit": "better-npm-audit audit",
+    "test": "jest --config ./jest.config.js ./tests/units",
+    "typecheck": "npx tsc",
+    "lint": "eslint . --max-warnings 0",
     "example-basic": "npx tsx ./examples/basic/script.ts",
     "example-lab10-clock": "npx tsx ./examples/lab10-clock/script.ts",
-    "example-blockclock": "npx tsx ./examples/blockclock/script.ts",
-    "test": "jest --config ./jest.config.js ./tests/units"
+    "example-blockclock": "npx tsx ./examples/blockclock/script.ts"
   },
   "dependencies": {
-    "@types/node": "^20.14.2",
     "axios": "^1.7.7",
     "jetty": "^0.2.1",
     "zod": "^3.23.8"
@@ -19,6 +21,10 @@
   "devDependencies": {
     "@types/jest": "^29.5.12",
     "@types/mocha": "^10.0.6",
+    "@types/node": "^20.14.2",
+    "@vitest/eslint-plugin": "^1.1.7",
+    "better-npm-audit": "^3.11.0",
+    "eslint": "^9.13.0",
     "ts-jest": "^29.1.2",
     "tsx": "^4.19.1",
     "typescript": "^5.4.2"
