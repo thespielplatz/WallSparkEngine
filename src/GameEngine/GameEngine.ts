@@ -1,4 +1,4 @@
-import { type ConfigSchema } from './Config'
+import { type ConfigSchema, type DisplaySchema } from './Config'
 import GameObject from './gameObjects/GameObject'
 import PixelBuffer from './drawing/PixelBuffer'
 import AbstractRenderer from './renderer/AbstractRenderer'
@@ -13,8 +13,8 @@ export default class GameEngine {
   private frameDuration = 1000 / this.fps
   private gameObject: GameObject[] = []
   private pixelBuffer: PixelBuffer
-
   private config: ConfigSchema
+
   constructor(config: ConfigSchema) {
     this.config = config
     this.pixelBuffer = new PixelBuffer(config.width, config.height)
@@ -42,7 +42,7 @@ export default class GameEngine {
   }
 
   private initRenderers() {
-    this.config.displays.forEach(display => {
+    this.config.displays.forEach((display: DisplaySchema) => {
       if (display.active === false) {
         return
       }

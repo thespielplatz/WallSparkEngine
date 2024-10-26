@@ -15,13 +15,16 @@ const WledSchema = z.object({
   port: z.number().default(21324),
 })
 
+const DisplaySchema = z.union([ConsoleSchema, WledSchema])
+
 const ConfigSchema = z.object({
   width: z.number(),
   height: z.number(),
   brightness: z.number().min(0).max(255).default(128),
-  displays: z.array(z.union([ConsoleSchema, WledSchema])),
+  displays: z.array(DisplaySchema),
 })
 
+export type DisplaySchema = z.infer<typeof DisplaySchema>
 export type ConfigSchema = z.infer<typeof ConfigSchema>
 
 export class Config {
