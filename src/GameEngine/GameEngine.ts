@@ -37,7 +37,7 @@ export default class GameEngine {
     }
   }
 
-  public addGameObject(gameObject: GameObject) { 
+  public addGameObject(gameObject: GameObject) {
     this.gameObject.push(gameObject)
   }
 
@@ -47,24 +47,27 @@ export default class GameEngine {
         return
       }
 
+      // eslint-disable-next-line no-console
+      console.info(`Initializing display ${'name' in display ? display.name : '(noname)' } (${display.type})`)
+
       switch (display.type) {
         case 'console':
-          this.renderer.push(new ConsoleRenderer({ 
-            width: this.config.width, 
-            height: this.config.height, 
+          this.renderer.push(new ConsoleRenderer({
+            width: this.config.width,
+            height: this.config.height,
             brightness: this.config.brightness,
-           }))
+          }))
           break
 
         case 'wled':
-          this.renderer.push(new WledRenderer({ 
-            width: this.config.width, 
-            height: this.config.height, 
+          this.renderer.push(new WledRenderer({
+            width: this.config.width,
+            height: this.config.height,
             brightness: this.config.brightness,
             name: display.name,
-            host: display.host, 
+            host: display.host,
             port: display.port,
-           }))
+          }))
           break
       }
     })
@@ -81,14 +84,14 @@ export default class GameEngine {
     for (let gameObject of this.gameObject) {
       this.pixelBuffer.transform(gameObject)
       await gameObject.draw(this.pixelBuffer)
-    }    
+    }
   }
 
   private async render() {
     await Promise.all(
       this.renderer.map(renderer => {
         renderer.render(this.pixelBuffer.getPixelData())
-      })
+      }),
     )
   }
 }

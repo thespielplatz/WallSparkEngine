@@ -1,10 +1,8 @@
 import Text from '@/GameEngine/gameObjects/Text'
-import { DEFAULT_CHARSET_WIDTH } from '@/GameEngine/drawing/charsetUtils'
-import axios, { Axios, AxiosResponse } from 'axios'
-import { get } from 'http'
+import axios from 'axios'
 
 export default class BlockTime extends Text {
-  private timeIntervalInSeconds: number
+  private timeIntervalInSeconds: number = 0
   private centerOnWidth: number
   private nextUpdateTime: number
 
@@ -34,6 +32,7 @@ export default class BlockTime extends Text {
       }
     } catch {
       // Fail silently
+      // eslint-disable-next-line no-console
       console.info('Failed to fetch block time from mempool.space')
     }
   }

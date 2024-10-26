@@ -9,6 +9,7 @@ export default class AbstractRenderer {
     this.brightness = params.brightness
   }
 
+  // eslint-disable-next-line no-unused-vars
   async render(pixelData: number[]) {
     new Error('This is just a stub, implement in actual class.')
   }

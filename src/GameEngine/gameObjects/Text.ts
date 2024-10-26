@@ -16,7 +16,7 @@ export default class Text extends GameObject {
   }
 
   async draw(pixelBuffer: PixelBuffer) {
-    if (this.innerText.length <= 0) return
+    if (this.innerText.length <= 0) { return }
     this.drawText(pixelBuffer)
   }
 
@@ -30,16 +30,16 @@ export default class Text extends GameObject {
       this.innerText = value as string
       return
     }
-    
+
     if (typeof value === 'number') {
       this.innerText = (value as number).toString()
       return
     }
-    
+
     if (typeof value === 'object' && 'toString' in value) {
       this.innerText = value.toString()
     }
-  } 
+  }
 
   get text(): string {
     return this.innerText

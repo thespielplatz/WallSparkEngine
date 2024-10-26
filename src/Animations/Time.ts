@@ -1,6 +1,5 @@
-import Text from '../GameEngine/gameObjects/Text'
-import PixelBuffer from '../GameEngine/drawing/PixelBuffer'
-import { DEFAULT_CHARSET_WIDTH } from '../GameEngine/drawing/charsetUtils'
+import Text from '@/GameEngine/gameObjects/Text'
+import { DEFAULT_CHARSET_WIDTH } from '@/GameEngine/drawing/charsetUtils'
 
 export default class Time extends Text {
   private showSeconds: boolean
@@ -17,7 +16,7 @@ export default class Time extends Text {
       this.x = Math.floor((width - 4 * (DEFAULT_CHARSET_WIDTH + this.charSpacing) - 1 * (1 + this.charSpacing) + 1) / 2)
     }
   }
-  
+
   async update() {
     const now = new Date()
     const hours = now.getHours().toString().padStart(2, '0')

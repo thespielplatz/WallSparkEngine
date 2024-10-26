@@ -25,5 +25,5 @@ export default class UDPSender {
 
   close() {
     this.client.close()
-  }  
+  }
 }

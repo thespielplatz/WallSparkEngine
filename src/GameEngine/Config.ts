@@ -10,7 +10,7 @@ const ConsoleSchema = z.object({
 const WledSchema = z.object({
   name: z.string().optional(),
   active: z.boolean().default(true),
-  type: z.literal('wled'), 
+  type: z.literal('wled'),
   host: z.string(),
   port: z.number().default(21324),
 })
@@ -28,8 +28,8 @@ export class Config {
   private values: ConfigSchema
 
   constructor() {
-    const configPath = path.resolve(process.cwd(), 'config.json');
-    const configJson = fs.readFileSync(configPath, 'utf-8');
+    const configPath = path.resolve(process.cwd(), 'config.json')
+    const configJson = fs.readFileSync(configPath, 'utf-8')
 
     try {
       this.values = ConfigSchema.parse(JSON.parse(configJson))
@@ -37,7 +37,7 @@ export class Config {
       console.error('Error parsing config! Check config.json.example and the following error:')
       throw new Error(`Error parsing config: ${error}`)
     }
-
+    // eslint-disable-next-line no-console
     console.info('Config is valid:', this.values)
   }
 

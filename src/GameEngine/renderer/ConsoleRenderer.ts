@@ -1,14 +1,11 @@
 import AbstractRenderer from './AbstractRenderer'
 import Jetty from 'jetty'
 
-const VALID_ROTATION = [0, 90, 180, 270]
-
 export default class ConsoleRenderer extends AbstractRenderer {
   private jetty: Jetty
 
   constructor(params: { width: number, height: number, brightness: number }) {
     super(params)
-    console.info('ConsoleRenderer init')
 
     this.jetty = new Jetty(process.stdout)
     this.jetty.reset().clear().moveTo([0,0])

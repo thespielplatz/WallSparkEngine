@@ -12,6 +12,7 @@ export default class GameObject {
   public async update() {
   }
 
+  // eslint-disable-next-line no-unused-vars
   public async draw(pixelBuffer: PixelBuffer) {
   }
 }

@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-console
 console.info('Example - Clock')
 
 import GameEngine from '@/GameEngine/GameEngine'

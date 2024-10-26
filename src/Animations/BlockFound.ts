@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import GameObject from '../GameEngine/gameObjects/GameObject'
 import PixelBuffer from '../GameEngine/drawing/PixelBuffer'
 
@@ -53,30 +54,30 @@ export default class BlockFound extends GameObject {
   }
 
   async draw(pixelBuffer: PixelBuffer) {
-    if (this.step < 0) return
-  
+    if (this.step < 0) { return }
+
     for (let i = 0; i < this.pixels.length; i++) {
       const p = this.pixels[i]
-      if (p.x < 0 || p.x >= this.width || p.y < 0 || p.y >= this.height) continue
+      if (p.x < 0 || p.x >= this.width || p.y < 0 || p.y >= this.height) { continue }
       pixelBuffer.setPixel(p.x, p.y, p.color)
     }
   }
 
   private nextStep() {
-    if (this.state == State.Done) return
-    if (this.step < 0) return
+    if (this.state == State.Done) { return }
+    if (this.step < 0) { return }
 
-    if (this.state == State.Start) this.nextStepStart()
-    if (this.state == State.Drop) this.nextStepDrop()
-    if (this.state == State.Move) this.nextStepMove()
-  
-    if (this.step < 0) return
-  
+    if (this.state == State.Start) { this.nextStepStart() }
+    if (this.state == State.Drop) { this.nextStepDrop() }
+    if (this.state == State.Move) { this.nextStepMove() }
+
+    if (this.step < 0) { return }
+
     this.step++
   }
 
   private nextStepStart() {
-    if (this.step < 10) return
+    if (this.step < 10) { return }
     this.state = State.Drop
     this.step = 0
   }
@@ -95,7 +96,7 @@ export default class BlockFound extends GameObject {
     for (let i = 0; i < this.pixels.length; i++) {
       this.pixels[i].x++
     }
-  
+
     if (this.step > this.width) {
       this.step = -1
       this.state = State.Done

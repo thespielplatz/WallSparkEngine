@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-console
 console.info('Example - Clock')
 
 import GameEngine from '@/GameEngine/GameEngine'
@@ -21,7 +22,7 @@ const sateLogo = new SateLogo({
 })
 
 const minervaLogo = new MinervaLogo({
-  x: config.config.width - MinervaLogo.width - 1 - 1
+  x: config.config.width - MinervaLogo.width - 1 - 1,
 })
 
 gameEngine.addGameObject(sateLogo)

@@ -1,5 +1,7 @@
 import js from '@eslint/js'
 import pluginVitest from '@vitest/eslint-plugin'
+import globals from 'globals'
+import typescriptParser from '@typescript-eslint/parser'
 
 export default [
   {
@@ -27,6 +29,15 @@ export default [
   },
 
   {
+    languageOptions: {
+      parser: typescriptParser,
+      globals: {
+        ...globals.node,
+      },
+    },
+    plugins: {
+      '@typescript-eslint': typescriptParser,
+    },
     rules: {
       semi: ['error', 'never'],
       quotes: ['error', 'single', { 'avoidEscape': true }],
@@ -45,6 +56,12 @@ export default [
       'object-curly-spacing': ['error', 'always'],
       'no-trailing-spaces': ['error'],
       'indent': ['error', 2, { SwitchCase: 1 }],
+    },
+  },
+
+  {
+    rules: {
+      'no-redeclare': 'off', // Disable the base rule
     },
   },
 ]

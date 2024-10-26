@@ -1,4 +1,5 @@
-// jetty.d.ts
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
 declare module 'jetty' {
 
   class Jetty {

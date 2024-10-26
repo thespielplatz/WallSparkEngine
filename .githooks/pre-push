@@ -4,4 +4,4 @@
 set -e
 
 npm run audit
-npm run tests
+npm run test

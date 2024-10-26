@@ -14,23 +14,23 @@ export class MinervaLogo extends GameObject {
     pixelBuffer.setPixel(0, 4, 0x754eca)
     pixelBuffer.setPixel(1, 4, 0x754eca)
     pixelBuffer.setPixel(2, 1, 0x754eca)
-  
+
     pixelBuffer.setPixel(2, 4, 0x6249ca)
     pixelBuffer.setPixel(3, 0, 0x6249ca)
     pixelBuffer.setPixel(3, 3, 0x6249ca)
     pixelBuffer.setPixel(3, 4, 0x6249ca)
     pixelBuffer.setPixel(4, 1, 0x6249ca)
     pixelBuffer.setPixel(4, 4, 0x6249ca)
-  
+
     pixelBuffer.setPixel(5, 0, 0x4341ca)
     pixelBuffer.setPixel(6, 0, 0x4341ca)
     pixelBuffer.setPixel(6, 1, 0x4341ca)
     pixelBuffer.setPixel(6, 2, 0x4341ca)
-  
+
     pixelBuffer.setPixel(6, 3, 0x744eca)
     pixelBuffer.setPixel(6, 4, 0x744eca)
     pixelBuffer.setPixel(5, 4, 0x744eca)
-  
+
     pixelBuffer.setPixel(2, 0, 0xFFFFFF)
     pixelBuffer.setPixel(4, 0, 0xFFFFFF)
     pixelBuffer.setPixel(1, 1, 0xFFFFFF)
@@ -44,6 +44,6 @@ export class MinervaLogo extends GameObject {
     pixelBuffer.setPixel(1, 3, 0xFFFFFF)
     pixelBuffer.setPixel(2, 3, 0xFFFFFF)
     pixelBuffer.setPixel(4, 3, 0xFFFFFF)
-    pixelBuffer.setPixel(5, 3, 0xFFFFFF)     
+    pixelBuffer.setPixel(5, 3, 0xFFFFFF)
   }
 }
