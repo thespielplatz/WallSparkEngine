@@ -14,7 +14,6 @@
     "example-blockclock": "npx tsx ./examples/blockclock/script.ts"
   },
   "dependencies": {
-    "axios": "^1.7.7",
     "jetty": "^0.2.1",
     "zod": "^3.23.8"
   },
@@ -27,7 +26,6 @@
     "better-npm-audit": "^3.11.0",
     "eslint": "^9.13.0",
     "ts-jest": "^29.1.2",
-    "tsx": "^4.19.1",
-    "typescript": "^5.4.2"
+    "tsx": "^4.19.1"
   }
 }

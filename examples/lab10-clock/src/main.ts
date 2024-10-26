@@ -1,12 +1,13 @@
 // eslint-disable-next-line no-console
 console.info('Example - Clock')
 
-import GameEngine from '@/GameEngine/GameEngine'
-import { Config } from '@/GameEngine/Config'
+import GameEngine from '@tsp/wse/GameEngine/GameEngine'
+import { Config } from '@tsp/wse/GameEngine/Config'
+import Time from '@tsp/wse/Animations/Time'
 
-import Time from '@/Animations/Time'
-import { SateLogo } from '../lib/logos/SateLogo'
-import { MinervaLogo } from '../lib/logos/MinervaLogo'
+import { SateLogo } from './logos/SateLogo'
+import { MinervaLogo } from './logos/MinervaLogo'
+import GameObject from '@tsp/wse/GameEngine/gameObjects/GameObject'
 
 const config = new Config()
 const gameEngine = new GameEngine(config.config)
@@ -27,7 +28,7 @@ const minervaLogo = new MinervaLogo({
 
 gameEngine.addGameObject(sateLogo)
 gameEngine.addGameObject(minervaLogo)
-gameEngine.addGameObject(time)
+gameEngine.addGameObject(time as unknown as GameObject)
 
 ;(async () => {
   await gameEngine.run()
