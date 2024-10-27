@@ -1,6 +1,8 @@
 // eslint-disable-next-line no-console
 console.info('Example - Clock')
 
+import { CronJob, sendAt as cronSendAt } from 'cron'
+
 import GameEngine from '@tsp/wse/GameEngine/GameEngine'
 import { Config } from '@tsp/wse/GameEngine/Config'
 import Time from '@tsp/wse/Animations/Time'
@@ -54,6 +56,26 @@ if (scene.rightLogo) {
 
 gameEngine.addGameObject(time as unknown as GameObject)
 
+let terminateJob = null
+if (scene.terminateCron) {
+  // Terimate at second 1, so that the time is displayed for the full minute
+  const cronPattern = `01 ${scene.terminateCron}`
+  terminateJob = CronJob.from({
+    cronTime: cronPattern,
+    onTick: () => {
+      gameEngine.stop()
+    },
+    start: true,
+  })
+  const dt = cronSendAt(cronPattern )
+  // eslint-disable-next-line no-console
+  console.info(`The app will terminate at: ${dt.toISO()}`)
+}
+
 ;(async () => {
   await gameEngine.run()
+  if (terminateJob) {
+    terminateJob.stop()
+  }
+  process.exit(0)
 })()

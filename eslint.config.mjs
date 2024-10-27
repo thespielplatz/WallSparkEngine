@@ -1,6 +1,6 @@
+import globals from 'globals'
 import js from '@eslint/js'
 import pluginVitest from '@vitest/eslint-plugin'
-import globals from 'globals'
 import typescriptParser from '@typescript-eslint/parser'
 
 export default [

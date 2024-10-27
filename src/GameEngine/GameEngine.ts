@@ -14,15 +14,17 @@ export default class GameEngine {
   private gameObject: GameObject[] = []
   private pixelBuffer: PixelBuffer
   private config: ConfigSchema
+  private running
 
   constructor(config: ConfigSchema) {
     this.config = config
     this.pixelBuffer = new PixelBuffer(config.width, config.height)
     this.initRenderers()
+    this.running = true
   }
 
   async run() {
-    while (true) {
+    while (this.running) {
       const start = performance.now()
 
       await this.update()
@@ -35,6 +37,10 @@ export default class GameEngine {
         await sleep(this.frameDuration - frameTime)
       }
     }
+  }
+
+  public stop() {
+    this.running = false
   }
 
   public addGameObject(gameObject: GameObject) {
