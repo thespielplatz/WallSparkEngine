@@ -1,9 +1,16 @@
 import PixelBuffer from '@tsp/wse/GameEngine/drawing/PixelBuffer'
 import GameObject from '@tsp/wse/GameEngine/gameObjects/GameObject'
 
-export class SateLogo extends GameObject {
-  public static width = 3
-  public static height = 5
+import ILogo from '@shared/logos/ILogo'
+
+export class SateLogo extends GameObject implements ILogo {
+  get width(): number {
+    return 3
+  }
+
+  get height(): number {
+    return 5
+  }
 
   async draw(pixelBuffer: PixelBuffer) {
     pixelBuffer.setPixel(0, 0, 0xfc0052)

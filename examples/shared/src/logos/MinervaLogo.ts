@@ -1,9 +1,16 @@
 import PixelBuffer from '@tsp/wse/GameEngine/drawing/PixelBuffer'
 import GameObject from '@tsp/wse/GameEngine/gameObjects/GameObject'
 
-export class MinervaLogo extends GameObject {
-  public static width = 6
-  public static height = 5
+import ILogo from '@shared/logos/ILogo'
+
+export class MinervaLogo extends GameObject implements ILogo {
+  get width(): number {
+    return 6
+  }
+
+  get height(): number {
+    return 5
+  }
 
   async draw(pixelBuffer: PixelBuffer) {
     pixelBuffer.setPixel(0, 0, 0x754eca)

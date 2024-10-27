@@ -6,7 +6,6 @@ const ConsoleSchema = z.object({
   active: z.boolean().default(true),
   type: z.literal('console'),
   brightness: z.number().min(0).max(255).default(255),
-  scene: z.any().optional().describe('Scene to render. Is a "any" slot for projects to define their own scenes'),
 })
 
 const WledSchema = z.object({
@@ -24,6 +23,7 @@ const ConfigSchema = z.object({
   width: z.number(),
   height: z.number(),
   displays: z.array(DisplaySchema),
+  scene: z.any().optional().describe('Scene to render. Is a "any" slot for projects to define their own scenes'),
 })
 
 export type DisplaySchema = z.infer<typeof DisplaySchema>
