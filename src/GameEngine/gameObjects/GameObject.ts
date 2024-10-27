@@ -1,4 +1,4 @@
-import PixelBuffer from '../drawing/PixelBuffer'
+import PixelBuffer from '@tsp/wse/GameEngine/drawing/PixelBuffer'
 
 export default class GameObject {
   public x: number

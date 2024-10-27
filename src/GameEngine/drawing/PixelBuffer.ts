@@ -1,4 +1,4 @@
-import GameObject from '../gameObjects/GameObject'
+import GameObject from '@tsp/wse/GameEngine/gameObjects/GameObject'
 
 export default class PixelBuffer {
   private width: number

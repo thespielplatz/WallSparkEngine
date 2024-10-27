@@ -3,12 +3,12 @@
     "target": "ES2022",
     "lib": ["ES2022"],
     "module": "commonjs",
-    "baseUrl": ".", // This sets the base directory for resolving non-relative module imports
+    "baseUrl": ".",
     "paths": {
       "@tsp/wse/*": ["../../src/*"],
-      "@/*": ["../../src/*"]
+      "@shared/*": ["../shared/src/*"]
     },
-    "rootDir": ".", /* Specify the root folder within your source files. */
+    "rootDir": "./src", /* Specify the root folder within your source files. */
     "outDir": "./dist",
     "moduleResolution": "node",
     "types": ["node"],
@@ -20,11 +20,14 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "skipLibCheck": true,
+    "skipLibCheck": true
   },
   "references": [
     { 
-      "path": "../../tsconfig.json"
+      "path": "../../"
+    },
+    {
+      "path": "../shared/"
     }
   ]
 }

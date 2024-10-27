@@ -4,10 +4,10 @@ console.info('Example - Clock')
 import GameEngine from '@tsp/wse/GameEngine/GameEngine'
 import { Config } from '@tsp/wse/GameEngine/Config'
 import Time from '@tsp/wse/Animations/Time'
-
-import { SateLogo } from './logos/SateLogo'
-import { MinervaLogo } from './logos/MinervaLogo'
 import GameObject from '@tsp/wse/GameEngine/gameObjects/GameObject'
+
+import { SateLogo } from '@shared/logos/SateLogo'
+import { MinervaLogo } from '@shared/logos/MinervaLogo'
 
 const config = new Config()
 const gameEngine = new GameEngine(config.config)
@@ -15,6 +15,7 @@ const gameEngine = new GameEngine(config.config)
 const time = new Time({
   x: 0,
   y: 0,
+  showSeconds: true,
 })
 time.centerOnWidth(config.config.width)
 

@@ -1,17 +1,18 @@
 {
-  "include": ["src", "test"],
+  "include": ["src"],
   "compilerOptions": {
     "target": "ES2022",
     "lib": ["ES2022"],
     "module": "commonjs",
     "baseUrl": ".", // This sets the base directory for resolving non-relative module imports
     "paths": {
-      "@tsp/wse/*": ["./src/*"],
+      "@tsp/wse/*": ["../../src/*"],
+      "@shared/*": ["./src/*"]
     },
-    "rootDir": ".", /* Specify the root folder within your source files. */
+    "rootDir": "./src", /* Specify the root folder within your source files. */
     "outDir": "./dist",
     "moduleResolution": "node",
-    "types": ["node", "jest"],
+    "types": ["node"],
     "typeRoots": [
       "types",
       "node_modules/@types"
@@ -21,5 +22,10 @@
     "strict": true,
     "skipLibCheck": true,
     "composite": true
-  }
+  },
+  "references": [
+    { 
+      "path": "../../"
+    },
+  ]  
 }

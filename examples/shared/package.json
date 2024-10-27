@@ -1,0 +1,17 @@
+{
+  "name": "shared-recources",
+  "version": "1.0.0",
+  "author": "Philipp Horwath",
+  "license": "MIT",
+  "description": "a shared recources project for wall spark engine examples",
+  "scripts": {
+    "typecheck": "npx tsc",
+    "lint": "eslint . --max-warnings 0"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.2",
+    "tsx": "^4.19.1"
+  }
+}

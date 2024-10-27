@@ -1,9 +1,9 @@
-import { type ConfigSchema, type DisplaySchema } from './Config'
-import GameObject from './gameObjects/GameObject'
-import PixelBuffer from './drawing/PixelBuffer'
-import AbstractRenderer from './renderer/AbstractRenderer'
-import ConsoleRenderer from './renderer/ConsoleRenderer'
-import WledRenderer from './renderer/WledRenderer/WledRenderer'
+import { type ConfigSchema, type DisplaySchema } from '@tsp/wse/GameEngine/Config'
+import GameObject from '@tsp/wse/GameEngine/gameObjects/GameObject'
+import PixelBuffer from '@tsp/wse/GameEngine/drawing/PixelBuffer'
+import AbstractRenderer from '@tsp/wse/GameEngine/renderer/AbstractRenderer'
+import ConsoleRenderer from '@tsp/wse/GameEngine/renderer/ConsoleRenderer'
+import WledRenderer from '@tsp/wse/GameEngine/renderer/WledRenderer/WledRenderer'
 
 const sleep = (timeout:number) => new Promise(res => setTimeout(res, timeout))
 
@@ -48,14 +48,14 @@ export default class GameEngine {
       }
 
       // eslint-disable-next-line no-console
-      console.info(`Initializing display ${'name' in display ? display.name : '(noname)' } (${display.type})`)
+      console.info(`Initializing display (${'name' in display ? display.name : '()' }) (${display.type})`)
 
       switch (display.type) {
         case 'console':
           this.renderer.push(new ConsoleRenderer({
             width: this.config.width,
             height: this.config.height,
-            brightness: this.config.brightness,
+            brightness: display.brightness,
           }))
           break
 
@@ -63,7 +63,7 @@ export default class GameEngine {
           this.renderer.push(new WledRenderer({
             width: this.config.width,
             height: this.config.height,
-            brightness: this.config.brightness,
+            brightness: display.brightness,
             name: display.name,
             host: display.host,
             port: display.port,

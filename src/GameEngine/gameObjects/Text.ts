@@ -1,7 +1,7 @@
-import GameObject from './GameObject'
-import PixelBuffer from '../drawing/PixelBuffer'
-import { WHITE } from '../drawing/colors'
-import charsetUtils, { DEFAULT_CHARSET_WIDTH } from '../drawing/charsetUtils'
+import GameObject from '@tsp/wse/GameEngine/gameObjects/GameObject'
+import PixelBuffer from '@tsp/wse/GameEngine/drawing/PixelBuffer'
+import { WHITE } from '@tsp/wse/GameEngine/drawing/colors'
+import charsetUtils, { DEFAULT_CHARSET_WIDTH } from '@tsp/wse/GameEngine/drawing/charsetUtils'
 
 export default class Text extends GameObject {
   private innerText: string

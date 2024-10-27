@@ -1,5 +1,5 @@
-import Text from '@/GameEngine/gameObjects/Text'
-import { DEFAULT_CHARSET_WIDTH } from '@/GameEngine/drawing/charsetUtils'
+import Text from '@tsp/wse/GameEngine/gameObjects/Text'
+import { DEFAULT_CHARSET_WIDTH } from '@tsp/wse/GameEngine/drawing/charsetUtils'
 
 export default class Time extends Text {
   private showSeconds: boolean

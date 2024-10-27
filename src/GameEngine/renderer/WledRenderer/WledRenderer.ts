@@ -1,5 +1,5 @@
-import UDPSender from './modules/UDPSender'
-import AbstractRenderer from '../AbstractRenderer'
+import UDPSender from '@tsp/wse/GameEngine/renderer/WledRenderer/modules/UDPSender'
+import AbstractRenderer from '@tsp/wse/GameEngine/renderer/AbstractRenderer'
 
 export default class WledRenderer extends AbstractRenderer {
   private udpSender: UDPSender
@@ -36,9 +36,9 @@ export default class WledRenderer extends AbstractRenderer {
   async render(pixelData: number[]) {
     for (let i = 0; i < pixelData.length; i++) {
       const pixel = pixelData[i]
-      this.messageBuffer[2 + i * 3] = (pixel >> 16) & 0xFF
-      this.messageBuffer[3 + i * 3] = (pixel >> 8) & 0xFF
-      this.messageBuffer[4 + i * 3] = pixel & 0xFF
+      this.messageBuffer[2 + i * 3] = ((pixel >> 16) & 0xFF) * this.brightness / 255
+      this.messageBuffer[3 + i * 3] = ((pixel >> 8) & 0xFF) * this.brightness / 255
+      this.messageBuffer[4 + i * 3] = pixel & 0xFF * this.brightness / 255
     }
 
     await this.udpSender.send(this.messageBuffer)

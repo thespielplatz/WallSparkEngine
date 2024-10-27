@@ -1,11 +1,11 @@
 // eslint-disable-next-line no-console
 console.info('Example - Basic')
 
-import GameEngine from '@/GameEngine/GameEngine'
-import { Config } from '@/GameEngine/Config'
+import GameEngine from '@tsp/wse/GameEngine/GameEngine'
+import { Config } from '@tsp/wse/GameEngine/Config'
 
-import Rainbow from '@/Animations/Rainbow'
-import Time from '@/Animations/Time'
+import Rainbow from '@tsp/wse/Animations/Rainbow'
+import Time from '@tsp/wse/Animations/Time'
 
 const config = new Config()
 const gameEngine = new GameEngine(config.config)

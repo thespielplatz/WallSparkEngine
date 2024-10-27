@@ -5,6 +5,8 @@ import { z } from 'zod'
 const ConsoleSchema = z.object({
   active: z.boolean().default(true),
   type: z.literal('console'),
+  brightness: z.number().min(0).max(255).default(255),
+  scene: z.any().optional().describe('Scene to render. Is a "any" slot for projects to define their own scenes'),
 })
 
 const WledSchema = z.object({
@@ -13,6 +15,7 @@ const WledSchema = z.object({
   type: z.literal('wled'),
   host: z.string(),
   port: z.number().default(21324),
+  brightness: z.number().min(0).max(255).default(255),
 })
 
 const DisplaySchema = z.union([ConsoleSchema, WledSchema])
@@ -20,7 +23,6 @@ const DisplaySchema = z.union([ConsoleSchema, WledSchema])
 const ConfigSchema = z.object({
   width: z.number(),
   height: z.number(),
-  brightness: z.number().min(0).max(255).default(128),
   displays: z.array(DisplaySchema),
 })
 
