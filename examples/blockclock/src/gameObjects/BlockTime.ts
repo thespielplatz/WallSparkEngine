@@ -1,4 +1,4 @@
-import Text from '@/GameEngine/gameObjects/Text'
+import Text from '@tsp/wse/GameEngine/gameObjects/Text'
 import axios from 'axios'
 
 export default class BlockTime extends Text {

@@ -49,7 +49,7 @@ if (scene.leftLogo) {
 if (scene.rightLogo) {
   const rightLogo = getLogo(scene.rightLogo)
   if (rightLogo) {
-    rightLogo.x = config.config.width - rightLogo.width - 1 - LOGO_PADDING
+    rightLogo.x = config.config.width - rightLogo.width - LOGO_PADDING
     gameEngine.addGameObject(rightLogo)
   }
 }
