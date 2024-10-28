@@ -2,6 +2,7 @@
 examples/*
 
 # Example - Except directories
+!examples/README.md
 !examples/basic-clock/
 !examples/blockclock/
 !examples/shared/
