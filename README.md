@@ -54,6 +54,10 @@ npm run main
 - Change the `host` in `config.json` with the ip address of your wled display.
 - Change `active` to `true`
 
+## Project Notes
+
+- Examples: ts-node was used instead of tsc/tsx, because the target device was an Raspberry PI Zero with armv6 architecture.
+
 ## Support
 
 If you like this project, give it a star! If you love it, fork it and take it out for dinner. 🌟🍽️ And hey, why not [send some tip love?](https://thespielplatz.com/tip-jar)
