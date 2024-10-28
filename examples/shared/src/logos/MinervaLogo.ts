@@ -3,7 +3,7 @@ import GameObject from '@tsp/wse/GameEngine/gameObjects/GameObject'
 
 import ILogo from '@shared/logos/ILogo'
 
-export class MinervaLogo extends GameObject implements ILogo {
+export default class MinervaLogo extends GameObject implements ILogo {
   get width(): number {
     return 6
   }

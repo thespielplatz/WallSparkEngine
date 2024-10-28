@@ -8,10 +8,11 @@ import { Config } from '@tsp/wse/GameEngine/Config'
 import Time from '@tsp/wse/Animations/Time'
 import GameObject from '@tsp/wse/GameEngine/gameObjects/GameObject'
 
-import { SateLogo } from '@shared/logos/SateLogo'
-import { MinervaLogo } from '@shared/logos/MinervaLogo'
-import { type LogoEnum, SceneSchema } from './sceneSchema'
+import SateLogo from '@shared/logos/SateLogo'
+import MinervaLogo from '@shared/logos/MinervaLogo'
 import ILogo from '@shared/logos/ILogo'
+
+import { type LogoEnum, SceneSchema } from './sceneSchema'
 
 const LOGO_PADDING = 1
 

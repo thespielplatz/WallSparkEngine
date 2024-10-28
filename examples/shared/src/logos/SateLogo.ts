@@ -3,7 +3,7 @@ import GameObject from '@tsp/wse/GameEngine/gameObjects/GameObject'
 
 import ILogo from '@shared/logos/ILogo'
 
-export class SateLogo extends GameObject implements ILogo {
+export default class SateLogo extends GameObject implements ILogo {
   get width(): number {
     return 3
   }
