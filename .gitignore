@@ -1,3 +1,11 @@
+# Example - Ignore everything
+examples/*
+
+# Example - Except directories
+!examples/basic-clock/
+!examples/blockclock/
+!examples/shared/
+
 # Nuxt dev/build outputs
 .output
 .data
