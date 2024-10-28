@@ -54,7 +54,7 @@ if (scene.rightLogo) {
   }
 }
 
-gameEngine.addGameObject(time as unknown as GameObject)
+gameEngine.addGameObject(time)
 
 let terminateJob = null
 if (scene.terminateCron) {
