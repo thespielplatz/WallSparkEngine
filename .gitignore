@@ -7,6 +7,9 @@ examples/*
 !examples/blockclock/
 !examples/shared/
 
+# wse
+src/main.ts
+
 # Nuxt dev/build outputs
 .output
 .data
