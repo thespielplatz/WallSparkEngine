@@ -4,6 +4,13 @@
 
 The Wall Spark Engine is a versatile pixel rendering and game engine designed for creating stunning animations or interactive games on wall-mounted pixel displays. It integrates effortlessly with [WLED](https://kno.wled.ge/) for seamless control and vibrant visual effects.
 
+## Features
+
+- Rendering on Console & WLED display (via UDP)
+- Rendering/GameEngine with basics
+- Config via config.json
+- Example: Simple Clock
+
 ## Roadmap
 
 - **Milestone BlockClock** - Add the same functionality of BlockClock code of [BlockClock Repo](https://github.com/thespielplatz/tspi-blockclock)
