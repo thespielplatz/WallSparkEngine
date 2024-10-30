@@ -34,4 +34,4 @@ logs
 .env
 .env.*
 !.env.example
-config.json
+config*.json

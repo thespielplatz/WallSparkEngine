@@ -13,7 +13,13 @@ import BlockTime from './gameObjects/BlockTime'
 
 const LOGO_PADDING = 1
 
-const config = new Config()
+let customConfigFile: string | undefined = undefined
+
+if (process.argv.length > 2) {
+  customConfigFile = process.argv[2]
+}
+
+const config = new Config({ configFile: customConfigFile })
 const gameEngine = new GameEngine(config.config)
 
 const blocktime = new BlockTime({

@@ -5,7 +5,7 @@ import ILogo from '@shared/logos/ILogo'
 
 export default class MinervaLogo extends GameObject implements ILogo {
   get width(): number {
-    return 6
+    return 7
   }
 
   get height(): number {

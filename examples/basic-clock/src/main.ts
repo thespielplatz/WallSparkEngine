@@ -16,7 +16,14 @@ import { type LogoEnum, SceneSchema } from './sceneSchema'
 
 const LOGO_PADDING = 1
 
-const config = new Config()
+
+let customConfigFile: string | undefined = undefined
+
+if (process.argv.length > 2) {
+  customConfigFile = process.argv[2]
+}
+
+const config = new Config({ configFile: customConfigFile })
 const gameEngine = new GameEngine(config.config)
 
 const scene = SceneSchema.parse(config.config.scene)

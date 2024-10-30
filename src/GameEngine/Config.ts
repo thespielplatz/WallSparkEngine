@@ -32,8 +32,8 @@ export type ConfigSchema = z.infer<typeof ConfigSchema>
 export class Config {
   private values: ConfigSchema
 
-  constructor() {
-    const configPath = path.resolve(process.cwd(), 'config.json')
+  constructor({ configFile = 'config.json' }: { configFile?: string} = {}) {
+    const configPath = path.resolve(process.cwd(), configFile)
     const configJson = fs.readFileSync(configPath, 'utf-8')
 
     try {
