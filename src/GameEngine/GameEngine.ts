@@ -53,11 +53,11 @@ export default class GameEngine {
         return
       }
 
-      // eslint-disable-next-line no-console
-      console.info(`Initializing display (${'name' in display ? display.name : '()' }) (${display.type})`)
 
       switch (display.type) {
         case 'console':
+          // eslint-disable-next-line no-console
+          console.info('Initializing ConsoleRenderer')
           this.renderer.push(new ConsoleRenderer({
             width: this.config.width,
             height: this.config.height,
@@ -66,13 +66,15 @@ export default class GameEngine {
           break
 
         case 'wled':
+          // eslint-disable-next-line no-console
+          console.info(`Connecting WledRenderer ${display.name ? `(${display.name}) ` : ''}@ ${display.host}:${display.port}`)
           this.renderer.push(new WledRenderer({
             width: this.config.width,
             height: this.config.height,
-            brightness: display.brightness,
             name: display.name,
             host: display.host,
             port: display.port,
+            brightness: display.brightness,
           }))
           break
       }
