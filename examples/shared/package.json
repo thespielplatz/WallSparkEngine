@@ -3,5 +3,8 @@
   "version": "1.0.0",
   "author": "Philipp Horwath",
   "license": "MIT",
-  "description": "a shared recources project for wall spark engine examples"
+  "description": "a shared recources project for wall spark engine examples",
+  "devDependencies": {
+    "@types/node": "^22.9.0"
+  }
 }
