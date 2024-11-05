@@ -2,7 +2,9 @@
 
 [![MIT License Badge](docs/img/license-badge.svg)](LICENSE)
 
+<img src="docs/img/logo.png" align="left" width="75px" style="margin-right:16px;"/>
 The Wall Spark Engine is a versatile pixel rendering and game engine designed for creating stunning animations or interactive games on wall-mounted pixel displays. It integrates effortlessly with [WLED](https://kno.wled.ge/) for seamless control and vibrant visual effects.
+<br clear="left"/>
 
 ## Features
 
