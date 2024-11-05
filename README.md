@@ -11,7 +11,7 @@ The Wall Spark Engine is a versatile pixel rendering and game engine designed fo
 - Rendering on Console & WLED display (via UDP)
 - Rendering/GameEngine with basics
 - Config via config.json
-- Example: Simple Clock
+- Example: Simple Clock & armv6 (Raspberry PI Zero I)
 
 ## Roadmap
 
