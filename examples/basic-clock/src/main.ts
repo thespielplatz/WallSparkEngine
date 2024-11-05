@@ -16,7 +16,6 @@ import { type LogoEnum, SceneSchema } from './sceneSchema'
 
 const LOGO_PADDING = 1
 
-
 let customConfigFile: string | undefined = undefined
 
 if (process.argv.length > 2) {
