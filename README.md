@@ -49,6 +49,18 @@ cd example/basic-clock/
 npm i
 ```
 
+### Setup armv6 example
+
+```bash
+# Start in project root
+npm i --ignore-scripts
+
+# Copy a config file into the example directory
+cp config.json.example example/basic-clock-armv6/config.json
+
+cd example/basic-clock-armv6/
+npm i
+
 ### Run output on console
 
 The default config in config.json.example is to run the output in the console. Run the basic example from example directory:
