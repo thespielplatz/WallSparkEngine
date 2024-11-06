@@ -8,7 +8,7 @@
     "paths": {
       "@tsp/wse/*": ["./src/*"],
     },
-    "rootDir": ".", /* Specify the root folder within your source files. */
+    "rootDir": "./src", /* Specify the root folder within your source files. */
     "outDir": "./dist",
     "moduleResolution": "node",
     "types": ["node", "jest"],

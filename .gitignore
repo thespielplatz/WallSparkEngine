@@ -18,6 +18,7 @@ src/main.ts
 .nitro
 .cache
 dist
+tsconfig.tsbuildinfo
 
 # Node dependencies
 node_modules
