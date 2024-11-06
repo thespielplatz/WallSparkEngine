@@ -24,13 +24,19 @@ export default class GameEngineController extends GameObject {
   }) {
     super()
     this.gameEngine = gameEngine
+    this.initTurnOnCronJob(turnOnCron)
+    this.initTurnOffCronJob(turnOffCron)
+    this.initRenderEngineState()
+  }
+
+  private initTurnOnCronJob(turnOnCron?: string) {
     if (turnOnCron) {
       cronType.parse(turnOnCron)
       const cronPattern = `00 ${turnOnCron}`
       this.turnOnCronJob = CronJob.from({
         cronTime: cronPattern,
         onTick: () => {
-          gameEngine.isRendering = true
+          this.gameEngine.isRendering = true
         },
         start: true,
       })
@@ -38,19 +44,30 @@ export default class GameEngineController extends GameObject {
       // eslint-disable-next-line no-console
       console.info(`The rendering will turn on at: ${dt.toISO()}`)
     }
+  }
+
+  private initTurnOffCronJob(turnOffCron?: string) {
     if (turnOffCron) {
       cronType.parse(turnOffCron)
       const cronPattern = `00 ${turnOffCron}`
-      this.turnOnCronJob = CronJob.from({
+      this.turnOffCronJob = CronJob.from({
         cronTime: cronPattern,
         onTick: () => {
-          gameEngine.isRendering = false
+          this.gameEngine.isRendering = false
         },
         start: true,
       })
       const dt = cronSendAt(cronPattern)
       // eslint-disable-next-line no-console
       console.info(`The rendering will turn off at: ${dt.toISO()}`)
+    }
+  }
+
+  private initRenderEngineState() {
+    if (this.turnOnCronJob && this.turnOffCronJob) {
+      if (this.turnOnCronJob.nextDate() > this.turnOffCronJob.nextDate()) {
+        this.gameEngine.isRendering = false
+      }
     }
   }
 }
