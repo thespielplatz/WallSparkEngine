@@ -37,6 +37,8 @@ export default class GameEngine {
       const frameTime = end - start
       if (frameTime < this.frameDuration) {
         await sleep(this.frameDuration - frameTime)
+      } else {
+        await sleep(1)
       }
     }
   }
