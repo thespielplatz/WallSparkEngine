@@ -1,4 +1,4 @@
-import GameObject from '@tsp/wse/GameEngine/gameObjects/GameObject'
+import GameObject from '@tsp/wse/GameObjects/GameObject'
 import PixelBuffer from '@tsp/wse/GameEngine/drawing/PixelBuffer'
 import { WHITE } from '@tsp/wse/GameEngine/drawing/colors'
 import charsetUtils from '@tsp/wse/GameEngine/drawing/charsetUtils'

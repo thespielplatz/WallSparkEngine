@@ -12,6 +12,12 @@ export const SceneSchema = z.object({
   'terminateCron': z.string().regex(cronPattern, {
     message: "Invalid cron expression format. Expected format: '* * * * *' (minute hour day month dayOfWeek)",
   }).optional(),
+  'turnOffCron': z.string().regex(cronPattern, {
+    message: "Invalid cron expression format. Expected format: '* * * * *' (minute hour day month dayOfWeek)",
+  }).optional(),
+  'turnOnCron': z.string().regex(cronPattern, {
+    message: "Invalid cron expression format. Expected format: '* * * * *' (minute hour day month dayOfWeek)",
+  }).optional(),
 }).default({})
 
 export type SceneSchema = z.infer<typeof SceneSchema>

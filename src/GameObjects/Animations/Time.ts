@@ -1,4 +1,4 @@
-import Text from '@tsp/wse/GameEngine/gameObjects/Text'
+import Text from '@tsp/wse/GameObjects/Drawing/Text'
 
 export default class Time extends Text {
   private showSeconds: boolean

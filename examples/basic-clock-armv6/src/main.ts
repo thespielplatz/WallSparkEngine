@@ -5,7 +5,7 @@ import { CronJob, sendAt as cronSendAt } from 'cron'
 
 import GameEngine from '@tsp/wse/GameEngine/GameEngine'
 import { Config } from '@tsp/wse/GameEngine/Config'
-import Time from '@tsp/wse/Animations/Time'
+import Time from '@tsp/wse/GameObjects/Animations/Time'
 import GameObject from '@tsp/wse/GameEngine/gameObjects/GameObject'
 
 import SateLogo from '@shared/logos/SateLogo'

@@ -5,8 +5,9 @@ import { CronJob, sendAt as cronSendAt } from 'cron'
 
 import GameEngine from '@tsp/wse/GameEngine/GameEngine'
 import { Config } from '@tsp/wse/GameEngine/Config'
-import Time from '@tsp/wse/Animations/Time'
-import GameObject from '@tsp/wse/GameEngine/gameObjects/GameObject'
+import Time from '@tsp/wse/GameObjects/Animations/Time'
+import GameObject from '@tsp/wse/GameObjects/GameObject'
+import GameEngineController from '@tsp/wse/GameObjects/Logic/GameEngineController'
 
 import SateLogo from '@shared/logos/SateLogo'
 import MinervaLogo from '@shared/logos/MinervaLogo'
@@ -26,13 +27,6 @@ const config = new Config({ configFile: customConfigFile })
 const gameEngine = new GameEngine(config.config)
 
 const scene = SceneSchema.parse(config.config.scene)
-
-const time = new Time({
-  x: 0,
-  y: 0,
-  showSeconds: scene.showSeconds,
-  centerOnWidth: config.config.width,
-})
 
 const getLogo = (logo: LogoEnum): GameObject & ILogo | null => {
   switch (logo) {
@@ -61,7 +55,20 @@ if (scene.rightLogo) {
   }
 }
 
+const time = new Time({
+  x: 0,
+  y: 0,
+  showSeconds: scene.showSeconds,
+  centerOnWidth: config.config.width,
+})
 gameEngine.addGameObject(time)
+
+const gameEngineController = new GameEngineController({
+  gameEngine,
+  turnOnCron: scene.turnOnCron,
+  turnOffCron: scene.turnOffCron,
+})
+gameEngine.addGameObject(gameEngineController)
 
 let terminateJob = null
 if (scene.terminateCron) {

@@ -1,5 +1,5 @@
 import { type ConfigSchema, type DisplaySchema } from '@tsp/wse/GameEngine/Config'
-import GameObject from '@tsp/wse/GameEngine/gameObjects/GameObject'
+import GameObject from '@tsp/wse/GameObjects/GameObject'
 import PixelBuffer from '@tsp/wse/GameEngine/drawing/PixelBuffer'
 import AbstractRenderer from '@tsp/wse/GameEngine/renderer/AbstractRenderer'
 import ConsoleRenderer from '@tsp/wse/GameEngine/renderer/ConsoleRenderer'
@@ -14,17 +14,19 @@ export default class GameEngine {
   private gameObject: GameObject[] = []
   private pixelBuffer: PixelBuffer
   private config: ConfigSchema
-  private running
+  private isRunning
+  isRendering: boolean
 
   constructor(config: ConfigSchema) {
     this.config = config
     this.pixelBuffer = new PixelBuffer(config.width, config.height)
     this.initRenderers()
-    this.running = true
+    this.isRunning = true
+    this.isRendering = true
   }
 
   async run() {
-    while (this.running) {
+    while (this.isRunning) {
       const start = performance.now()
 
       await this.update()
@@ -40,7 +42,7 @@ export default class GameEngine {
   }
 
   public stop() {
-    this.running = false
+    this.isRunning = false
   }
 
   public addGameObject(gameObject: GameObject) {
@@ -52,7 +54,6 @@ export default class GameEngine {
       if (display.active === false) {
         return
       }
-
 
       switch (display.type) {
         case 'console':
@@ -96,6 +97,9 @@ export default class GameEngine {
   }
 
   private async render() {
+    if (!this.isRendering) {
+      return
+    }
     await Promise.all(
       this.renderer.map(renderer => {
         renderer.render(this.pixelBuffer.getPixelData())

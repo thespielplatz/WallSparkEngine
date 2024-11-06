@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import GameObject from '@tsp/wse/GameEngine/gameObjects/GameObject'
+import GameObject from '@tsp/wse/GameObjects/GameObject'
 import PixelBuffer from '@tsp/wse/GameEngine/drawing/PixelBuffer'
 
 let colors = [0xFFFFFF, 0x101010, 0xFF8800, 0x909090, 0x050505]
