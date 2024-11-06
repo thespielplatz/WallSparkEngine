@@ -1,18 +1,26 @@
 import GameObject from '@tsp/wse/GameEngine/gameObjects/GameObject'
 import PixelBuffer from '@tsp/wse/GameEngine/drawing/PixelBuffer'
 import { WHITE } from '@tsp/wse/GameEngine/drawing/colors'
-import charsetUtils, { DEFAULT_CHARSET_WIDTH } from '@tsp/wse/GameEngine/drawing/charsetUtils'
+import charsetUtils from '@tsp/wse/GameEngine/drawing/charsetUtils'
 
 export default class Text extends GameObject {
   private innerText: string
+  private centerOnWidth: number | undefined
   public color: number
   public charSpacing: number
 
-  constructor({ x, y, text, color = WHITE, charSpacing = 1 }: { x: number, y: number, text: string, color?: number, charSpacing?: number }) {
+  constructor({ x, y, text, color = WHITE, charSpacing = 1, centerOnWidth }: { x: number, y: number, text: string, color?: number, charSpacing?: number, centerOnWidth?: number }) {
     super({ x, y })
     this.innerText = text
     this.color = color
     this.charSpacing = charSpacing
+    this.centerOnWidth = centerOnWidth
+  }
+
+  async update() {
+    if (this.centerOnWidth) {
+      this.centerTextOnWidth(this.centerOnWidth)
+    }
   }
 
   async draw(pixelBuffer: PixelBuffer) {
@@ -45,13 +53,21 @@ export default class Text extends GameObject {
     return this.innerText
   }
 
-  public centerTextOnWidth(width: number) {
-    this.x = Math.floor((width - this.text.length * (DEFAULT_CHARSET_WIDTH + this.charSpacing) + 1) / 2)
+  private centerTextOnWidth(width: number) {
+    const textAsArray = this.getTextAsArray()
+    const charWidths = textAsArray.reduce((acc, char) => {
+      const charDefinition = charsetUtils.get(char)
+      if (!charDefinition) {
+        return acc
+      }
+
+      return acc + charDefinition[0].length
+    }, 0)
+    this.x = Math.floor((width - (charWidths  + (textAsArray.length - 1) * this.charSpacing)) / 2)
   }
 
   private drawText(pixelBuffer: PixelBuffer) {
-    let formatted = this.innerText.toString().toLowerCase()
-    const textAsArray = formatted.match(/.{1}/ug) || []
+    const textAsArray = this.getTextAsArray()
 
     let currentX = 0
     for (let i = 0; i < textAsArray.length; i++) {
@@ -59,6 +75,11 @@ export default class Text extends GameObject {
       const offset = this.drawCharacter(pixelBuffer, currentX, 0, char)
       currentX += offset + this.charSpacing
     }
+  }
+
+  private getTextAsArray(): string[] {
+    let formatted = this.innerText.toString().toLowerCase()
+    return formatted.match(/.{1}/ug) || []
   }
 
   private drawCharacter(pixelBuffer: PixelBuffer, offX: number, offY :number, char: string): number {

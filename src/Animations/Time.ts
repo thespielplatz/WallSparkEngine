@@ -1,23 +1,15 @@
 import Text from '@tsp/wse/GameEngine/gameObjects/Text'
-import { DEFAULT_CHARSET_WIDTH } from '@tsp/wse/GameEngine/drawing/charsetUtils'
 
 export default class Time extends Text {
   private showSeconds: boolean
 
-  constructor({ x, y, showSeconds = true, color }: { x: number, y: number, showSeconds?: boolean, color?: number }) {
-    super({ x, y, color, text: '' })
+  constructor({ x, y, showSeconds = true, color, centerOnWidth }: { x: number, y: number, showSeconds?: boolean, color?: number, centerOnWidth?: number }) {
+    super({ x, y, color, text: '', centerOnWidth })
     this.showSeconds = showSeconds
   }
 
-  public centerOnWidth(width: number) {
-    if (this.showSeconds) {
-      this.x = Math.floor((width - 6 * (DEFAULT_CHARSET_WIDTH + this.charSpacing) - 2 * (1 + this.charSpacing) + 1) / 2)
-    } else {
-      this.x = Math.floor((width - 4 * (DEFAULT_CHARSET_WIDTH + this.charSpacing) - 1 * (1 + this.charSpacing) + 1) / 2)
-    }
-  }
-
   async update() {
+    await super.update()
     const now = new Date()
     const hours = now.getHours().toString().padStart(2, '0')
     const minutes = now.getMinutes().toString().padStart(2, '0')

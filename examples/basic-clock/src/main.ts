@@ -31,8 +31,8 @@ const time = new Time({
   x: 0,
   y: 0,
   showSeconds: scene.showSeconds,
+  centerOnWidth: config.config.width,
 })
-time.centerOnWidth(config.config.width)
 
 const getLogo = (logo: LogoEnum): GameObject & ILogo | null => {
   switch (logo) {
