@@ -65,7 +65,7 @@ export default class GameEngineController extends GameObject {
 
   private initRenderEngineState() {
     if (this.turnOnCronJob && this.turnOffCronJob) {
-      if (this.turnOnCronJob.nextDate() > this.turnOffCronJob.nextDate()) {
+      if (this.turnOffCronJob.nextDate() > this.turnOnCronJob.nextDate()) {
         // eslint-disable-next-line no-console
         console.info('Detected off phase, turning rendering off')
         this.gameEngine.isRendering = false
