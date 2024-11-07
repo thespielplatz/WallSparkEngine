@@ -34,6 +34,9 @@ export default class GameEngine extends EventEmitter {
   }
 
   private scheduleNextRun() {
+    // Info about the game loop
+    // Resource #1: https://nodejs.org/en/learn/asynchronous-work/understanding-setimmediate
+    // Resource #2: https://nodejs.org/en/learn/asynchronous-work/event-loop-timers-and-nexttick#setimmediate-vs-settimeout
     setImmediate(async () => {
       await this.run()
     })
