@@ -4,10 +4,13 @@ import PixelBuffer from '@tsp/wse/GameEngine/drawing/PixelBuffer'
 import AbstractRenderer from '@tsp/wse/GameEngine/renderer/AbstractRenderer'
 import ConsoleRenderer from '@tsp/wse/GameEngine/renderer/ConsoleRenderer'
 import WledRenderer from '@tsp/wse/GameEngine/renderer/WledRenderer/WledRenderer'
+import { EventEmitter } from 'stream'
 
 const sleep = (timeout:number) => new Promise(res => setTimeout(res, timeout))
 
-export default class GameEngine {
+export default class GameEngine extends EventEmitter {
+  static EVENT_STOPPED = 'stopped'
+
   private renderer: AbstractRenderer[] = []
   private fps = 60
   private frameDuration = 1000 / this.fps
@@ -18,6 +21,7 @@ export default class GameEngine {
   isRendering: boolean
 
   constructor(config: ConfigSchema) {
+    super()
     this.config = config
     this.pixelBuffer = new PixelBuffer(config.width, config.height)
     this.initRenderers()
@@ -25,21 +29,34 @@ export default class GameEngine {
     this.isRendering = true
   }
 
-  async run() {
-    while (this.isRunning) {
-      const start = performance.now()
+  start() {
+    this.scheduleNextRun()
+  }
 
-      await this.update()
-      await this.draw()
-      await this.render()
+  private scheduleNextRun() {
+    setImmediate(async () => {
+      await this.run()
+    })
+  }
 
-      const end = performance.now()
-      const frameTime = end - start
-      if (frameTime < this.frameDuration) {
-        await sleep(this.frameDuration - frameTime)
-      } else {
-        await sleep(1)
-      }
+  private async run() {
+    const start = performance.now()
+
+    await this.update()
+    await this.draw()
+    await this.render()
+
+    const end = performance.now()
+    const frameTime = end - start
+
+    if (frameTime < this.frameDuration) {
+      await sleep(this.frameDuration - frameTime)
+    }
+
+    if (this.isRunning) {
+      this.scheduleNextRun()
+    } else {
+      this.emit(GameEngine.EVENT_STOPPED)
     }
   }
 

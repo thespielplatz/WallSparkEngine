@@ -1,5 +1,5 @@
 import PixelBuffer from '@tsp/wse/GameEngine/drawing/PixelBuffer'
-import GameObject from '@tsp/wse/GameEngine/gameObjects/GameObject'
+import GameObject from '@tsp/wse/GameObjects/GameObject'
 
 import ILogo from '@shared/logos/ILogo'
 import { BLACK } from '@tsp/wse/GameEngine/drawing/colors'

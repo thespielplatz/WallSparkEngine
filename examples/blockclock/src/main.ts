@@ -3,13 +3,13 @@ console.info('Example - BlockClock')
 
 import GameEngine from '@tsp/wse/GameEngine/GameEngine'
 import { Config } from '@tsp/wse/GameEngine/Config'
-import GameObject from '@tsp/wse/GameEngine/gameObjects/GameObject'
+import GameObject from '@tsp/wse/GameObjects/GameObject'
 
 import SateLogo from '@shared/logos/SateLogo'
 import ILogo from '@shared/logos/ILogo'
 import TheSpielplatzLogo from '@shared/logos/TheSpielplatzLogo'
 
-import BlockTime from './gameObjects/BlockTime'
+import BlockTime from './GameObjects/BlockTime'
 
 const LOGO_PADDING = 1
 
@@ -37,6 +37,7 @@ gameEngine.addGameObject(logoLeft)
 gameEngine.addGameObject(logoRight)
 gameEngine.addGameObject(blocktime)
 
-;(async () => {
-  await gameEngine.run()
-})()
+gameEngine.start()
+gameEngine.on(GameEngine.EVENT_STOPPED, () => {
+  process.exit(0)
+})

@@ -6,7 +6,7 @@ import { CronJob, sendAt as cronSendAt } from 'cron'
 import GameEngine from '@tsp/wse/GameEngine/GameEngine'
 import { Config } from '@tsp/wse/GameEngine/Config'
 import Time from '@tsp/wse/GameObjects/Animations/Time'
-import GameObject from '@tsp/wse/GameEngine/gameObjects/GameObject'
+import GameObject from '@tsp/wse/GameObjects/GameObject'
 
 import SateLogo from '@shared/logos/SateLogo'
 import MinervaLogo from '@shared/logos/MinervaLogo'
@@ -79,10 +79,10 @@ if (scene.terminateCron) {
   console.info(`The app will terminate at: ${dt.toISO()}`)
 }
 
-;(async () => {
-  await gameEngine.run()
+gameEngine.start()
+gameEngine.on(GameEngine.EVENT_STOPPED, () => {
   if (terminateJob) {
     terminateJob.stop()
   }
   process.exit(0)
-})()
+})

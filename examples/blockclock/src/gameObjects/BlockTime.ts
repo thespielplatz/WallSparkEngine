@@ -1,15 +1,14 @@
-import Text from '@tsp/wse/GameEngine/gameObjects/Text'
 import axios from 'axios'
+
+import Text from '@tsp/wse/GameObjects/Drawing/Text'
 
 export default class BlockTime extends Text {
   private timeIntervalInSeconds: number = 0
-  private centerOnWidth: number
   private nextUpdateTime: number
 
-  constructor({ x = 0, y = 0, timeIntervalInSeconds = 5, centerOnWidth = 0 }: { x?: number, y?: number, timeIntervalInSeconds?: number, centerOnWidth? : number } = {}) {
-    super({ x, y, text: '' })
+  constructor({ x = 0, y = 0, timeIntervalInSeconds = 5, centerOnWidth }: { x?: number, y?: number, timeIntervalInSeconds?: number, centerOnWidth? : number } = {}) {
+    super({ x, y, text: '', centerOnWidth })
     this.timeIntervalInSeconds = timeIntervalInSeconds
-    this.centerOnWidth = centerOnWidth
     this.nextUpdateTime = 0
   }
 
@@ -27,9 +26,6 @@ export default class BlockTime extends Text {
     try {
       const response = await axios.get('https://mempool.space/api/blocks/tip/height')
       this.text = response.data
-      if (this.centerOnWidth > 0) {
-        this.centerTextOnWidth(this.centerOnWidth)
-      }
     } catch {
       // Fail silently
       // eslint-disable-next-line no-console

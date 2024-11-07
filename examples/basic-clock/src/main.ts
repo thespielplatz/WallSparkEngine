@@ -86,10 +86,10 @@ if (scene.terminateCron) {
   console.info(`The app will terminate at: ${dt.toISO()}`)
 }
 
-;(async () => {
-  await gameEngine.run()
+gameEngine.start()
+gameEngine.on(GameEngine.EVENT_STOPPED, () => {
   if (terminateJob) {
     terminateJob.stop()
   }
   process.exit(0)
-})()
+})
