@@ -3,13 +3,9 @@ console.info('Example - BlockClock')
 
 import GameEngine from '@tsp/wse/GameEngine/GameEngine'
 import { Config } from '@tsp/wse/GameEngine/Config'
-import GameObject from '@tsp/wse/GameObjects/GameObject'
-
-import SateLogo from '@shared/logos/SateLogo'
-import ILogo from '@shared/logos/ILogo'
-import TheSpielplatzLogo from '@shared/logos/TheSpielplatzLogo'
 
 import BlockTime from './GameObjects/BlockTime'
+import { getLogo } from '@shared/logos/logo'
 
 const LOGO_PADDING = 1
 
@@ -26,11 +22,10 @@ const blocktime = new BlockTime({
   centerOnWidth: config.config.width,
 })
 
-const logoLeft = new SateLogo({
-  x: LOGO_PADDING,
-})
+const logoLeft = getLogo('Sate')
+logoLeft.x = LOGO_PADDING
 
-const logoRight: GameObject & ILogo = new TheSpielplatzLogo()
+const logoRight = getLogo('TheSpielplatz')
 logoRight.x = config.config.width - logoRight.width - LOGO_PADDING
 
 gameEngine.addGameObject(logoLeft)

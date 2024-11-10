@@ -6,16 +6,10 @@ import { CronJob, sendAt as cronSendAt } from 'cron'
 import GameEngine from '@tsp/wse/GameEngine/GameEngine'
 import { Config } from '@tsp/wse/GameEngine/Config'
 import Time from '@tsp/wse/GameObjects/Animations/Time'
-import GameObject from '@tsp/wse/GameObjects/GameObject'
 import GameEngineController from '@tsp/wse/GameObjects/Logic/GameEngineController'
 
-import SateLogo from '@shared/logos/SateLogo'
-import MinervaLogo from '@shared/logos/MinervaLogo'
-import WallSpark from '@shared/logos/WallSparkLogo'
-import TheSpielplatz from '@shared/logos/TheSpielplatzLogo'
-import ILogo from '@shared/logos/ILogo'
-
-import { type LogoEnum, SceneSchema } from './sceneSchema'
+import { SceneSchema } from './sceneSchema'
+import { getLogo } from '@shared/logos/logo'
 
 const LOGO_PADDING = 1
 
@@ -29,21 +23,6 @@ const config = new Config({ configFile: customConfigFile })
 const gameEngine = new GameEngine(config.config)
 
 const scene = SceneSchema.parse(config.config.scene)
-
-const getLogo = (logo: LogoEnum): GameObject & ILogo | null => {
-  switch (logo) {
-    case 'Sate':
-      return new SateLogo()
-    case 'Minerva':
-      return new MinervaLogo()
-    case 'WallSpark':
-      return new WallSpark()
-    case 'TheSpielplatz':
-      return new TheSpielplatz()
-  }
-
-  return null
-}
 
 if (scene.leftLogo) {
   const leftLogo = getLogo(scene.leftLogo)
