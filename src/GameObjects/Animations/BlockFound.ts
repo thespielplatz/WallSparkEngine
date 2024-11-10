@@ -59,7 +59,7 @@ export default class BlockFound extends GameObject {
     for (let i = 0; i < this.pixels.length; i++) {
       const p = this.pixels[i]
       if (p.x < 0 || p.x >= this.width || p.y < 0 || p.y >= this.height) { continue }
-      pixelBuffer.setPixel(p.x, p.y, p.color)
+      pixelBuffer.setPixel(p)
     }
   }
 

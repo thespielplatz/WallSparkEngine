@@ -13,7 +13,7 @@ export default class PixelBuffer {
     this.translation = { x: 0, y: 0 }
   }
 
-  public setPixel(x: number, y: number, color: number) {
+  public setPixel({ x = 0, y = 0, color = 0 }: { x?: number, y?: number, color: number }) {
     const internalX = x + this.translation.x
     const internalY = y + this.translation.y
     if (internalX < 0 || internalX >= this.width) {
@@ -28,7 +28,11 @@ export default class PixelBuffer {
 
   public setPixelRow({ x = 0, y = 0, colors }: { x?: number, y?: number, colors: number[] }) {
     for (let i = 0; i < colors.length; i++) {
-      this.setPixel(x + i, y, colors[i])
+      this.setPixel({
+        x: x + i,
+        y,
+        color: colors[i],
+      })
     }
   }
 

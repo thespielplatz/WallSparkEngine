@@ -93,7 +93,11 @@ export default class Text extends GameObject {
       for (let col = 0; col < charDefinition[row].length; ++col) {
 
         if (charDefinition[row][col] == 1) {
-          pixelBuffer.setPixel(offX + col, offY + row, this.color)
+          pixelBuffer.setPixel({
+            x: offX + col,
+            y: offY + row,
+            color: this.color,
+          })
         }
       }
     }
