@@ -26,6 +26,12 @@ export default class PixelBuffer {
     this.setIndex(index, color)
   }
 
+  public setPixelRow({ x = 0, y = 0, colors }: { x?: number, y?: number, colors: number[] }) {
+    for (let i = 0; i < colors.length; i++) {
+      this.setPixel(x + i, y, colors[i])
+    }
+  }
+
   public setIndex(index: number, color: number) {
     if (index < 0 || index >= this.pixelData.length) {
       return

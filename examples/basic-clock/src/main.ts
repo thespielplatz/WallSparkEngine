@@ -11,6 +11,7 @@ import GameEngineController from '@tsp/wse/GameObjects/Logic/GameEngineControlle
 
 import SateLogo from '@shared/logos/SateLogo'
 import MinervaLogo from '@shared/logos/MinervaLogo'
+import WallSpark from '@shared/logos/WallSparkLogo'
 import ILogo from '@shared/logos/ILogo'
 
 import { type LogoEnum, SceneSchema } from './sceneSchema'
@@ -34,6 +35,8 @@ const getLogo = (logo: LogoEnum): GameObject & ILogo | null => {
       return new SateLogo()
     case 'Minerva':
       return new MinervaLogo()
+    case 'WallSpark':
+      return new WallSpark()
   }
 
   return null
