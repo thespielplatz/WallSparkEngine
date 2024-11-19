@@ -1,9 +1,10 @@
 import PixelBuffer from '@tsp/wse/GameEngine/drawing/PixelBuffer'
 import GameObject from '@tsp/wse/GameObjects/GameObject'
+import { INVISIBLE } from '@tsp/wse/GameEngine/drawing/colors'
 
 import ILogo from '@shared/logos/ILogo'
 
-const BG_COLOR = 0xFFFFFF
+const BG_COLOR = INVISIBLE
 const RED_LIGHT = 0xFF0000
 const RED_DARK = 0xA30036
 

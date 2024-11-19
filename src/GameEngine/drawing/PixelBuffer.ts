@@ -1,4 +1,5 @@
 import GameObject from '@tsp/wse/GameObjects/GameObject'
+import { INVISIBLE } from '@tsp/wse/GameEngine/drawing/colors'
 
 export default class PixelBuffer {
   private width: number
@@ -14,6 +15,9 @@ export default class PixelBuffer {
   }
 
   public setPixel({ x = 0, y = 0, color = 0 }: { x?: number, y?: number, color: number }) {
+    if (color === INVISIBLE) {
+      return
+    }
     const internalX = x + this.translation.x
     const internalY = y + this.translation.y
     if (internalX < 0 || internalX >= this.width) {
