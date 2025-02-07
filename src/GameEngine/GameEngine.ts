@@ -18,6 +18,7 @@ export default class GameEngine extends EventEmitter {
   private pixelBuffer: PixelBuffer
   private config: ConfigSchema
   private isRunning
+  private lastRunTime: number = -1
   isRendering: boolean
 
   constructor(config: ConfigSchema) {
@@ -45,7 +46,10 @@ export default class GameEngine extends EventEmitter {
   private async run() {
     const start = performance.now()
 
-    await this.update()
+    const deltaTime = this.lastRunTime <= 0 ? 0 : (performance.now() - this.lastRunTime) / 1000
+    this.lastRunTime = performance.now()
+
+    await this.update(deltaTime)
     await this.draw()
     await this.render()
 
@@ -55,6 +59,7 @@ export default class GameEngine extends EventEmitter {
     if (frameTime < this.frameDuration) {
       await sleep(this.frameDuration - frameTime)
     }
+
 
     if (this.isRunning) {
       this.scheduleNextRun()
@@ -104,9 +109,9 @@ export default class GameEngine extends EventEmitter {
     })
   }
 
-  private async update() {
+  private async update(deltaTime: number) {
     for (let gameObject of this.gameObject) {
-      await gameObject.update()
+      await gameObject.update(deltaTime)
     }
   }
 

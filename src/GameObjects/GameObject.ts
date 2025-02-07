@@ -9,7 +9,8 @@ export default class GameObject {
     this.y = y
   }
 
-  public async update() {
+  // eslint-disable-next-line no-unused-vars
+  public async update(deltaTime: number) {
   }
 
   // eslint-disable-next-line no-unused-vars

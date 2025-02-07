@@ -17,7 +17,8 @@ export default class Text extends GameObject {
     this.centerOnWidth = centerOnWidth
   }
 
-  async update() {
+  // eslint-disable-next-line no-unused-vars
+  async update(deltaTime: number) {
     if (this.centerOnWidth) {
       this.centerTextOnWidth(this.centerOnWidth)
     }
