@@ -6,8 +6,8 @@ export default class Countdown extends Text {
   private secondsLeft: number
   private nextTick = 0
 
-  constructor({ startTime, x, y, showSeconds = true, color, centerOnWidth }: { startTime: number, x: number, y: number, showSeconds?: boolean, color?: number, centerOnWidth?: number }) {
-    super({ x, y, color, text: '', centerOnWidth })
+  constructor({ startTime, x, y, showSeconds = true, color, centerOnWidth, visible }: { startTime: number, x: number, y: number, showSeconds?: boolean, color?: number, centerOnWidth?: number, visible?: boolean }) {
+    super({ x, y, color, text: '', centerOnWidth, visible })
     this.showSeconds = showSeconds
     this.secondsLeft = startTime
   }

@@ -5,8 +5,8 @@ import { WHITE } from '@tsp/wse/GameEngine/drawing/colors'
 export default class Fill extends GameObject {
   public color: number
 
-  constructor({ color = WHITE }: { color?: number }) {
-    super({ x: 0, y: 0 })
+  constructor({ color = WHITE, visible }: { color?: number, visible?: boolean }) {
+    super({ x: 0, y: 0, visible })
     this.color = color
   }
 

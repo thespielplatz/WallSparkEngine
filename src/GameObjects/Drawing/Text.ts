@@ -9,8 +9,8 @@ export default class Text extends GameObject {
   public color: number
   public charSpacing: number
 
-  constructor({ x, y, text, color = WHITE, charSpacing = 1, centerOnWidth }: { x: number, y: number, text: string, color?: number, charSpacing?: number, centerOnWidth?: number }) {
-    super({ x, y })
+  constructor({ x, y, text, color = WHITE, charSpacing = 1, centerOnWidth, visible }: { x: number, y: number, text: string, color?: number, charSpacing?: number, centerOnWidth?: number, visible?: boolean}) {
+    super({ x, y, visible })
     this.innerText = text
     this.color = color
     this.charSpacing = charSpacing
