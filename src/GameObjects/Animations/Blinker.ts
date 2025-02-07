@@ -17,11 +17,11 @@ export default class Blinker extends GameObject {
   async update(deltaTime: number) {
     await super.update(deltaTime)
 
+    this.nextTick -= deltaTime
     if (this.nextTick > 0) {
-      this.nextTick -= deltaTime
       return
     }
-    this.nextTick = this.wait
+    this.nextTick += this.wait
     this.colorIndex = (this.colorIndex + 1) % this.colors.length
   }
 

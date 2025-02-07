@@ -5,6 +5,7 @@ export default class Countdown extends Text {
   private showSeconds: boolean
   private secondsLeft: number
   private nextTick = 0
+  private reduceByTime = 0
 
   constructor({ startTime, x, y, showSeconds = true, color, centerOnWidth, visible }: { startTime: number, x: number, y: number, showSeconds?: boolean, color?: number, centerOnWidth?: number, visible?: boolean }) {
     super({ x, y, color, text: '', centerOnWidth, visible })
@@ -19,12 +20,33 @@ export default class Countdown extends Text {
       return
     }
 
+    this.nextTick -= deltaTime
     if (this.nextTick > 0) {
-      this.nextTick -= deltaTime
       return
     }
-    this.nextTick = 1
+    if (this.reduceByTime <= 0) {
+      this.nextTick += 1
+    } else {
+      this.nextTick += 0.1
+      this.reduceByTime -= 1
+    }
 
+    this.drawTime()
+
+    this.secondsLeft--
+  }
+
+  setTime(time: number) {
+    this.secondsLeft = time
+    this.drawTime()
+  }
+
+  reduceBy(reduceByTime: number) {
+    this.reduceByTime = reduceByTime
+    this.nextTick = 0
+  }
+
+  private drawTime() {
     const parts = secondsToTimeParts(this.secondsLeft)
 
     const hours = parts.hours.toString().padStart(2, '0')
@@ -36,11 +58,5 @@ export default class Countdown extends Text {
     } else {
       this.text = `${hours}:${minutes}`
     }
-
-    this.secondsLeft--
-  }
-
-  setTime(time: number) {
-    this.secondsLeft = time
   }
 }
