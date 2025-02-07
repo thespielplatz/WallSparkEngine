@@ -14,7 +14,7 @@ export default class GameEngine extends EventEmitter {
   private renderer: AbstractRenderer[] = []
   private fps = 60
   private frameDuration = 1000 / this.fps
-  private gameObject: GameObject[] = []
+  private gameObjects: GameObject[] = []
   private pixelBuffer: PixelBuffer
   private config: ConfigSchema
   private isRunning
@@ -73,7 +73,7 @@ export default class GameEngine extends EventEmitter {
   }
 
   public addGameObject(gameObject: GameObject) {
-    this.gameObject.push(gameObject)
+    this.gameObjects.push(gameObject)
   }
 
   private initRenderers() {
@@ -110,14 +110,17 @@ export default class GameEngine extends EventEmitter {
   }
 
   private async update(deltaTime: number) {
-    for (let gameObject of this.gameObject) {
+    for (let gameObject of this.gameObjects) {
       await gameObject.update(deltaTime)
     }
   }
 
   private async draw() {
     this.pixelBuffer.clear()
-    for (let gameObject of this.gameObject) {
+    for (let gameObject of this.gameObjects) {
+      if (gameObject.visible === false) {
+        continue
+      }
       this.pixelBuffer.transform(gameObject)
       await gameObject.draw(this.pixelBuffer)
     }
