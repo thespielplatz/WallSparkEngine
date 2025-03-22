@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import { GameEngine, Config, Rainbow, Time } from 'wall-spark-engine'
 
-console.info('Playground Game Engine')
+console.info('Playground Example: Rainbow Clock')
 
 const config = new Config()
 const gameEngine = new GameEngine(config.config)
