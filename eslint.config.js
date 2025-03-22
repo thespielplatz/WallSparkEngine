@@ -1,6 +1,5 @@
 import globals from 'globals'
 import js from '@eslint/js'
-import pluginVitest from '@vitest/eslint-plugin'
 import typescriptParser from '@typescript-eslint/parser'
 
 export default [
@@ -15,11 +14,6 @@ export default [
   },
 
   js.configs.recommended,
-
-  {
-    ...pluginVitest.configs.recommended,
-    files: ['src/**/__tests__/*'],
-  },
 
   {
     files: ['**/*.cjs'],

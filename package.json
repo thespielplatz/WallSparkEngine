@@ -4,26 +4,46 @@
   "author": "Philipp Horwath",
   "license": "MIT",
   "description": "a WLED Pixel Display Render/Game Engine",
+  "homepage": "https://github.com/thespielplatz/WallSparkEngine",
+  "bugs": {
+    "url": "https://github.com/thespielplatz/WallSparkEngine/issues"
+  },
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": "./dist/index.js",
+      "default": "./dist/index.cjs"
+    }
+  },
   "scripts": {
+    "build": "tsup",
+    "dev": "cd playground && npm run dev",
     "audit": "better-npm-audit audit",
-    "test": "jest --config ./jest.config.js ./tests/units",
     "typecheck": "npx tsc",
-    "lint": "eslint . --max-warnings 0"
+    "lint": "eslint . --max-warnings 0",
+    "check-exports": "attw --pack . --ignore-rules=cjs-resolves-to-esm"
   },
   "dependencies": {
-    "cron": "^3.1.9",
+    "cron": "^4.1.0",
     "jetty": "^0.2.1",
-    "zod": "^3.23.8"
+    "zod": "^3.24.2"
   },
   "devDependencies": {
-    "@types/jest": "^29.5.12",
-    "@types/mocha": "^10.0.6",
+    "@arethetypeswrong/cli": "^0.17.4",
+    "@eslint/js": "^9.23.0",
     "@types/node": "^20.17.6",
-    "@typescript-eslint/eslint-plugin": "^8.11.0",
-    "@vitest/eslint-plugin": "^1.1.7",
+    "@typescript-eslint/eslint-plugin": "^8.27.0",
     "better-npm-audit": "^3.11.0",
-    "eslint": "^9.13.0",
-    "ts-jest": "^29.1.2",
-    "tsx": "^4.19.1"
+    "eslint": "^9.23.0",
+    "globals": "^16.0.0",
+    "jiti": "^2.4.2",
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.2",
+    "typescript-eslint": "^8.27.0"
   }
 }

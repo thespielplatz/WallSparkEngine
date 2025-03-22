@@ -1,25 +1,40 @@
 {
-  "include": ["src", "test"],
+  "include": ["src/index.ts"],
   "compilerOptions": {
-    "target": "ES2022",
-    "lib": ["ES2022"],
-    "module": "commonjs",
-    "baseUrl": ".", // This sets the base directory for resolving non-relative module imports
+    /* Base Options: */
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "target": "ESNext",
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "moduleDetection": "force",
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+
+    /* Strictness */
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "forceConsistentCasingInFileNames": true,
+
+    /* If transpiling with TypeScript: */
+    "module": "Preserve",
+    //"module": "ESNext",
+    //"moduleResolution": "Node",
+
+    "lib": ["ESNext"],
+    "noEmit": true
+
+/*
     "paths": {
       "@tsp/wse/*": ["./src/*"],
     },
-    "rootDir": "./src", /* Specify the root folder within your source files. */
-    "outDir": "./dist",
-    "moduleResolution": "node",
-    "types": ["node", "jest"],
+    "types": ["node"],
     "typeRoots": [
       "types",
       "node_modules/@types"
     ],
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "skipLibCheck": true,
-    "composite": true
+  }
+    */
   }
 }

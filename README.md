@@ -91,6 +91,10 @@ Start changing things.
 
 - Examples: ts-node was used instead of tsc/tsx, because the target device was an Raspberry PI Zero with armv6 architecture.
 
+## Dev Notes
+
+Typescript guide: <https://www.totaltypescript.com/how-to-create-an-npm-package>
+
 ## Support
 
 If you like this project, give it a star! If you love it, fork it and take it out for dinner. 🌟🍽️ And hey, why not [send some tip love?](https://thespielplatz.com/tip-jar)
