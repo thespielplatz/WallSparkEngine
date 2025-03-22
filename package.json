@@ -29,7 +29,7 @@
     "lint": "eslint . --max-warnings 0",
     "check-exports": "attw --pack . --ignore-rules=cjs-resolves-to-esm",
     "bump-version": "changelogen --release && git push --follow-tags",
-    "publish": "npm run build && npm run check-exports && npm run lint && npm publish"
+    "release": "npm run build && npm run check-exports && npm run lint && npm publish"
   },
   "dependencies": {
     "ansi-escapes": "^7.0.0",
