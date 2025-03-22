@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "author": "Philipp Horwath",
   "license": "MIT",
+  "private": false,
   "description": "a WLED Pixel Display Render/Game Engine",
   "homepage": "https://github.com/thespielplatz/WallSparkEngine",
   "bugs": {
@@ -27,7 +28,8 @@
     "typecheck": "npx tsc",
     "lint": "eslint . --max-warnings 0",
     "check-exports": "attw --pack . --ignore-rules=cjs-resolves-to-esm",
-    "bump-version": "npm run build && npm run check-exports && npm run lint && changelogen --release && git push --follow-tags"
+    "bump-version": "changelogen --release && git push --follow-tags",
+    "publish": "npm run build && npm run check-exports && npm run lint && npm publish"
   },
   "dependencies": {
     "ansi-escapes": "^7.0.0",
