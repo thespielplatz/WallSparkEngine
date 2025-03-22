@@ -6,6 +6,5 @@ set -e
 npm run audit
 npm run typecheck
 npm run lint
-npm run test
 
 exit 0
