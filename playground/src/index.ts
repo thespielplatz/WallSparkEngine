@@ -1,12 +1,7 @@
 /* eslint-disable no-console */
-import { greet } from 'wall-spark-engine'
+import { GameEngine, Config, Rainbow, Time } from 'wall-spark-engine'
 
 console.info('Playground Game Engine')
-
-import GameEngine from '@tsp/wse/GameEngine/GameEngine'
-import { Config } from '@tsp/wse/GameEngine/Config'
-import Rainbow from '@tsp/wse/GameObjects/Animations/Rainbow'
-import Time from '@tsp/wse/GameObjects/Animations/Time'
 
 const config = new Config()
 const gameEngine = new GameEngine(config.config)

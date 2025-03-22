@@ -1,7 +1,7 @@
-import GameObject from '@tsp/wse/GameObjects/GameObject'
+import { GameObject } from '@tsp/wse/GameObjects/GameObject'
 import PixelBuffer from '@tsp/wse/GameEngine/drawing/PixelBuffer'
 
-export default class Rainbow extends GameObject {
+export class Rainbow extends GameObject {
   private width
   private height
   private numberOfPixels
@@ -22,12 +22,12 @@ export default class Rainbow extends GameObject {
     this.floatOffset = 0
   }
 
-  async update() {
+  override async update() {
     this.floatOffset += this.speed
     this.offset = Math.floor(this.floatOffset) % 256
   }
 
-  async draw(pixelBuffer: PixelBuffer) {
+  override async draw(pixelBuffer: PixelBuffer) {
     for (let i = 0; i < this.numberOfPixels; i++) {
       pixelBuffer.setIndex(i, this.colorwheel((this.offset + i) % 256))
     }

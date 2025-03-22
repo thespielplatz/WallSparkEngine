@@ -14,11 +14,11 @@ export default class MovingPixel extends GameObject {
     this.numberOfPixels = this.width * this.height
   }
 
-  async update() {
+  override async update() {
     this.step++
   }
 
-  async draw(pixelBuffer: PixelBuffer) {
+  override async draw(pixelBuffer: PixelBuffer) {
     pixelBuffer.setIndex(this.currentIndex, 0xFFFFFF)
     pixelBuffer.setIndex(this.currentIndex - 1, 0xD0D0D0)
     pixelBuffer.setIndex(this.currentIndex - 2, 0xA0A0A0)

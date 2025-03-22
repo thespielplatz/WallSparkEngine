@@ -1,4 +1,4 @@
-import GameObject from '@tsp/wse/GameObjects/GameObject'
+import { GameObject } from '@tsp/wse/GameObjects/GameObject'
 import PixelBuffer from '@tsp/wse/GameEngine/drawing/PixelBuffer'
 import { WHITE } from '@tsp/wse/GameEngine/drawing/colors'
 import charsetUtils from '@tsp/wse/GameEngine/drawing/charsetUtils'
@@ -18,13 +18,13 @@ export default class Text extends GameObject {
   }
 
   // eslint-disable-next-line no-unused-vars
-  async update(deltaTime: number) {
+  override async update(deltaTime: number) {
     if (this.centerOnWidth) {
       this.centerTextOnWidth(this.centerOnWidth)
     }
   }
 
-  async draw(pixelBuffer: PixelBuffer) {
+  override async draw(pixelBuffer: PixelBuffer) {
     if (this.innerText.length <= 0) { return }
     this.drawText(pixelBuffer)
   }
@@ -61,6 +61,9 @@ export default class Text extends GameObject {
       if (!charDefinition) {
         return acc
       }
+      if (!charDefinition[0]) {
+        return acc
+      }
 
       return acc + charDefinition[0].length
     }, 0)
@@ -72,7 +75,7 @@ export default class Text extends GameObject {
 
     let currentX = 0
     for (let i = 0; i < textAsArray.length; i++) {
-      const char = textAsArray[i]
+      const char: string = textAsArray[i] || ''
       const offset = this.drawCharacter(pixelBuffer, currentX, 0, char)
       currentX += offset + this.charSpacing
     }
@@ -91,9 +94,14 @@ export default class Text extends GameObject {
     }
 
     for (let row = 0; row < charDefinition.length; ++row) {
-      for (let col = 0; col < charDefinition[row].length; ++col) {
+      const length = charDefinition[row]?.length || 0
+      for (let col = 0; col < length; ++col) {
+        const rowData = charDefinition[row]
+        if (!rowData) {
+          continue
+        }
 
-        if (charDefinition[row][col] == 1) {
+        if (rowData[col] == 1) {
           pixelBuffer.setPixel({
             x: offX + col,
             y: offY + row,
@@ -103,6 +111,6 @@ export default class Text extends GameObject {
       }
     }
 
-    return charDefinition[0].length
+    return charDefinition[0]?.length || 0
   }
 }

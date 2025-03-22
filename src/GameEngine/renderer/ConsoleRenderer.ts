@@ -12,7 +12,7 @@ export default class ConsoleRenderer extends AbstractRenderer {
     this.jetty.reset().clear().moveTo([0,0])
   }
 
-  async render(pixelData: number[]) {
+  override async render(pixelData: number[]) {
     for (let i = 0; i < pixelData.length; i++) {
       let charWidth = 0
       let x = 0
@@ -22,9 +22,14 @@ export default class ConsoleRenderer extends AbstractRenderer {
       x = i % this.width
       y = Math.floor(i / this.width)
 
-      const r = Math.floor(((0xFF0000 & pixelData[i]) >> 16) / 255 * 5) * this.brightness / 255
-      const g = Math.floor(((0xFF00 & pixelData[i]) >> 8) / 255 * 5) * this.brightness / 255
-      const b = Math.floor(((0xFF & pixelData[i])) / 255 * 5) * this.brightness / 255
+      const c = pixelData[i]
+      if (!c) {
+        continue
+      }
+
+      const r = Math.floor(((0xFF0000 & c) >> 16) / 255 * 5) * this.brightness / 255
+      const g = Math.floor(((0xFF00 & c) >> 8) / 255 * 5) * this.brightness / 255
+      const b = Math.floor(((0xFF & c)) / 255 * 5) * this.brightness / 255
 
       this.jetty.moveTo([y, x * charWidth]).rgb([r,g,b]).text(`##${charWidth === 3 ? ' ': ''}`)
     }

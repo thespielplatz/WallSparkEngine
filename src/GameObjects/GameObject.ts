@@ -1,6 +1,6 @@
 import PixelBuffer from '@tsp/wse/GameEngine/drawing/PixelBuffer'
 
-export default class GameObject {
+export class GameObject {
   public x: number
   public y: number
   public visible: boolean
@@ -19,3 +19,5 @@ export default class GameObject {
   public async draw(pixelBuffer: PixelBuffer) {
   }
 }
+
+export default GameObject

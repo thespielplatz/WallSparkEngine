@@ -37,9 +37,12 @@ export default class WledRenderer extends AbstractRenderer {
     this.messageBuffer[1] = byte1
   }
 
-  async render(pixelData: number[]) {
+  override async render(pixelData: number[]) {
     for (let i = 0; i < pixelData.length; i++) {
       const pixel = pixelData[i]
+      if (!pixel) {
+        continue
+      }
       this.messageBuffer[2 + i * 3] = ((pixel >> 16) & 0xFF) * this.brightness / 255
       this.messageBuffer[3 + i * 3] = ((pixel >> 8) & 0xFF) * this.brightness / 255
       this.messageBuffer[4 + i * 3] = pixel & 0xFF * this.brightness / 255

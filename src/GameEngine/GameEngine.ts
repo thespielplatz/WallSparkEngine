@@ -8,7 +8,7 @@ import { EventEmitter } from 'stream'
 
 const sleep = (timeout:number) => new Promise(res => setTimeout(res, timeout))
 
-export default class GameEngine extends EventEmitter {
+export class GameEngine extends EventEmitter {
   static EVENT_STOPPED = 'stopped'
 
   private renderer: AbstractRenderer[] = []

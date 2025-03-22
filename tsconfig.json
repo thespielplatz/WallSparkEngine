@@ -23,8 +23,10 @@
     //"moduleResolution": "Node",
 
     "lib": ["ESNext"],
-    "noEmit": true
-
+    "noEmit": true,
+    "paths": {
+      "@tsp/wse/*": ["./src/*"],
+    }
 /*
     "paths": {
       "@tsp/wse/*": ["./src/*"],

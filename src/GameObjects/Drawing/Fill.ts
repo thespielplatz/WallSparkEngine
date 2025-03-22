@@ -10,7 +10,7 @@ export default class Fill extends GameObject {
     this.color = color
   }
 
-  async draw(pixelBuffer: PixelBuffer) {
+  override async draw(pixelBuffer: PixelBuffer) {
     pixelBuffer.fill(this.color)
   }
 }

@@ -14,7 +14,7 @@ export default class Blinker extends GameObject {
     this.nextTick = wait
   }
 
-  async update(deltaTime: number) {
+  override async update(deltaTime: number) {
     await super.update(deltaTime)
 
     this.nextTick -= deltaTime
@@ -25,7 +25,10 @@ export default class Blinker extends GameObject {
     this.colorIndex = (this.colorIndex + 1) % this.colors.length
   }
 
-  async draw(pixelBuffer: PixelBuffer) {
-    pixelBuffer.fill(this.colors[this.colorIndex])
+  override async draw(pixelBuffer: PixelBuffer) {
+    const color = this.colors[this.colorIndex]
+    if (color) {
+      pixelBuffer.fill(color)
+    }
   }
 }

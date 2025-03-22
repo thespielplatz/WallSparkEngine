@@ -13,7 +13,7 @@ export default class Countdown extends Text {
     this.secondsLeft = startTime
   }
 
-  async update(deltaTime: number) {
+  override async update(deltaTime: number) {
     await super.update(deltaTime)
 
     if (this.secondsLeft < 0) {

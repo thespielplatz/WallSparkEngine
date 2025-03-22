@@ -32,10 +32,11 @@ export default class PixelBuffer {
 
   public setPixelRow({ x = 0, y = 0, colors }: { x?: number, y?: number, colors: number[] }) {
     for (let i = 0; i < colors.length; i++) {
+      const color = colors[i] || 0
       this.setPixel({
         x: x + i,
         y,
-        color: colors[i],
+        color,
       })
     }
   }

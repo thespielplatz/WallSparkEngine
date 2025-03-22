@@ -1,5 +1,5 @@
-import GameEngine from '@tsp/wse/GameEngine/GameEngine'
-import GameObject from '@tsp/wse/GameObjects/GameObject'
+import { GameEngine } from '@tsp/wse/GameEngine/GameEngine'
+import { GameObject } from '@tsp/wse/GameObjects/GameObject'
 import { CronJob, sendAt as cronSendAt } from 'cron'
 import { z } from 'zod'
 
@@ -8,7 +8,7 @@ const cronType = z.string().regex(cronPattern, {
   message: "Invalid cron expression format. Expected format: '* * * * *' (minute hour day month dayOfWeek)",
 }).optional()
 
-export default class GameEngineController extends GameObject {
+export class GameEngineController extends GameObject {
   private gameEngine: GameEngine
   private turnOffCronJob?: CronJob
   private turnOnCronJob?: CronJob
