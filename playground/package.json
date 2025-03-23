@@ -9,7 +9,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "wall-spark-engine": "file:../"
+    "@thespielplatz/wall-spark-engine": "file:../"
   },
   "devDependencies": {
     "tsx": "^4.19.3",

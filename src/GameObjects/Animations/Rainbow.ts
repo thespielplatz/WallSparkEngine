@@ -1,7 +1,7 @@
-import { GameObject } from '@tsp/wse/GameObjects/GameObject'
+import GameObject from '@tsp/wse/GameObjects/GameObject'
 import PixelBuffer from '@tsp/wse/GameEngine/drawing/PixelBuffer'
 
-export class Rainbow extends GameObject {
+export default class Rainbow extends GameObject {
   private width
   private height
   private numberOfPixels

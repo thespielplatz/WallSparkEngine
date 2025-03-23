@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { GameEngine, Config, Rainbow, Time } from 'wall-spark-engine'
+import { Config, GameEngine, Rainbow, Time } from '@thespielplatz/wall-spark-engine'
 
 console.info('Playground Example: Rainbow Clock')
 

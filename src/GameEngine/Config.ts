@@ -29,7 +29,7 @@ const ConfigSchema = z.object({
 export type DisplaySchema = z.infer<typeof DisplaySchema>
 export type ConfigSchema = z.infer<typeof ConfigSchema>
 
-export class Config {
+export default class Config {
   private values: ConfigSchema
 
   constructor({ configFile = 'config.json' }: { configFile?: string} = {}) {

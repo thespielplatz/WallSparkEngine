@@ -1,7 +1,7 @@
 import GameObject from '@tsp/wse/GameObjects/GameObject'
 import { INVISIBLE } from '@tsp/wse/GameEngine/drawing/colors'
 
-export class PixelBuffer {
+export default class PixelBuffer {
   private width: number
   private height: number
   private pixelData: number[]

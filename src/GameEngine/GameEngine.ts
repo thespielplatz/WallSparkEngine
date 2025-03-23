@@ -1,6 +1,6 @@
 import { type ConfigSchema, type DisplaySchema } from '@tsp/wse/GameEngine/Config'
 import GameObject from '@tsp/wse/GameObjects/GameObject'
-import { PixelBuffer } from '@tsp/wse/GameEngine/drawing/PixelBuffer'
+import PixelBuffer from '@tsp/wse/GameEngine/drawing/PixelBuffer'
 import AbstractRenderer from '@tsp/wse/GameEngine/renderer/AbstractRenderer'
 import ConsoleRenderer from '@tsp/wse/GameEngine/renderer/ConsoleRenderer'
 import WledRenderer from '@tsp/wse/GameEngine/renderer/WledRenderer/WledRenderer'
@@ -8,7 +8,7 @@ import { EventEmitter } from 'stream'
 
 const sleep = (timeout:number) => new Promise(res => setTimeout(res, timeout))
 
-export class GameEngine extends EventEmitter {
+export default class GameEngine extends EventEmitter {
   static EVENT_STOPPED = 'stopped'
 
   private renderer: AbstractRenderer[] = []

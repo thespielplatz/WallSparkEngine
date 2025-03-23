@@ -1,6 +1,6 @@
 import Text from '@tsp/wse/GameObjects/Drawing/Text'
 
-export class Time extends Text {
+export default class Time extends Text {
   private showSeconds: boolean
 
   constructor({ x, y, showSeconds = true, color, centerOnWidth }: { x: number, y: number, showSeconds?: boolean, color?: number, centerOnWidth?: number }) {
