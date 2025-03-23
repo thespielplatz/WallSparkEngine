@@ -1,6 +1,24 @@
 # Changelog
 
 
+## v1.1.1
+
+[compare changes](https://github.com/thespielplatz/WallSparkEngine/compare/v1.1.0...v1.1.1)
+
+### 🏡 Chore
+
+- Change release script name ([d5d1381](https://github.com/thespielplatz/WallSparkEngine/commit/d5d1381))
+- Change release script name ([fa601d6](https://github.com/thespielplatz/WallSparkEngine/commit/fa601d6))
+- Set npm publish to public ([a9ce4bd](https://github.com/thespielplatz/WallSparkEngine/commit/a9ce4bd))
+- Remove unused dependency ([50f690c](https://github.com/thespielplatz/WallSparkEngine/commit/50f690c))
+- Remove unused gitigores ([76af09b](https://github.com/thespielplatz/WallSparkEngine/commit/76af09b))
+- Clean up tsconfig ([3d56f86](https://github.com/thespielplatz/WallSparkEngine/commit/3d56f86))
+- Add export of PixelBuffer ([e395b80](https://github.com/thespielplatz/WallSparkEngine/commit/e395b80))
+
+### ❤️ Contributors
+
+- Thespielplatz <informatics@gmx.net>
+
 ## v1.1.0
 
 
