@@ -1,16 +1,3 @@
-# Example - Ignore everything
-examples/*
-
-# Example - Except directories
-!examples/README.md
-!examples/basic-clock/
-!examples/basic-clock-armv6/
-!examples/blockclock/
-!examples/shared/
-
-# wse
-src/main.ts
-
 # Nuxt dev/build outputs
 .output
 .data
