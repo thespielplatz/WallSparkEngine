@@ -1,7 +1,9 @@
 /* eslint-disable no-console */
-import { Config, GameEngine, Rainbow, Time } from '@thespielplatz/wall-spark-engine'
+import { colors, Config, GameEngine, Rainbow, Time } from '@thespielplatz/wall-spark-engine'
 
 console.info('Playground Example: Rainbow Clock')
+
+console.log(`Test: ${colors.BLACK}`)
 
 const config = new Config()
 const gameEngine = new GameEngine(config.config)

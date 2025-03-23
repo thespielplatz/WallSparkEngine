@@ -1,5 +1,9 @@
 export { default as GameEngine } from './GameEngine/GameEngine'
 export { default as PixelBuffer } from './GameEngine/drawing/PixelBuffer'
+
+import * as colors from './GameEngine/drawing/colors'
+export { colors }
+
 export { default as Config } from './GameEngine/Config'
 
 export { default as GameObject } from './GameObjects/GameObject'
