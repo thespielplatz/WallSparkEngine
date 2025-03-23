@@ -20,7 +20,7 @@ export default class ConsoleRenderer extends AbstractRenderer {
       y = Math.floor(i / this.width)
 
       const c = pixelData[i]
-      if (!c) {
+      if (c === undefined) {
         continue
       }
 

@@ -60,7 +60,6 @@ export default class GameEngine extends EventEmitter {
       await sleep(this.frameDuration - frameTime)
     }
 
-
     if (this.isRunning) {
       this.scheduleNextRun()
     } else {
