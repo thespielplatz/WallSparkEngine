@@ -1,6 +1,20 @@
 # Changelog
 
 
+## v1.1.3
+
+[compare changes](https://github.com/thespielplatz/WallSparkEngine/compare/v1.1.2...v1.1.3)
+
+### 🏡 Chore
+
+- **release:** V1.1.2 ([7e87dbe](https://github.com/thespielplatz/WallSparkEngine/commit/7e87dbe))
+- Add checking script to bump-version ([b0a9535](https://github.com/thespielplatz/WallSparkEngine/commit/b0a9535))
+- Export colors ([e668df0](https://github.com/thespielplatz/WallSparkEngine/commit/e668df0))
+
+### ❤️ Contributors
+
+- Thespielplatz <informatics@gmx.net>
+
 ## v1.1.2
 
 [compare changes](https://github.com/thespielplatz/WallSparkEngine/compare/v1.1.1...v1.1.2)
