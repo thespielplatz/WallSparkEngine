@@ -1,6 +1,23 @@
 # Changelog
 
 
+## v1.1.4
+
+[compare changes](https://github.com/thespielplatz/WallSparkEngine/compare/v1.1.3...v1.1.4)
+
+### 🩹 Fixes
+
+- **ConsoleRenderer:** Draw black pixels ([1d571f2](https://github.com/thespielplatz/WallSparkEngine/commit/1d571f2))
+
+### 🏡 Chore
+
+- **release:** V1.1.3 ([e93a542](https://github.com/thespielplatz/WallSparkEngine/commit/e93a542))
+- Add git push to bump version script ([f54ea1f](https://github.com/thespielplatz/WallSparkEngine/commit/f54ea1f))
+
+### ❤️ Contributors
+
+- Thespielplatz <informatics@gmx.net>
+
 ## v1.1.3
 
 [compare changes](https://github.com/thespielplatz/WallSparkEngine/compare/v1.1.2...v1.1.3)
