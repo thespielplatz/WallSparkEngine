@@ -1,5 +1,7 @@
 
 export * from './GameEngine/GameEngine'
+export * from './GameEngine/drawing/PixelBuffer'
+
 export * from './GameEngine/Config'
 
 export * from './GameObjects/GameObject'
