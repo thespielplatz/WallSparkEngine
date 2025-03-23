@@ -1,4 +1,4 @@
-import PixelBuffer from '@tsp/wse/GameEngine/drawing/PixelBuffer'
+import { PixelBuffer } from '@tsp/wse/GameEngine/drawing/PixelBuffer'
 import GameObject from '../GameObject'
 
 export default class Blinker extends GameObject {

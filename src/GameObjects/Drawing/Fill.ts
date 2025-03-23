@@ -1,5 +1,5 @@
 import GameObject from '@tsp/wse/GameObjects/GameObject'
-import PixelBuffer from '@tsp/wse/GameEngine/drawing/PixelBuffer'
+import { PixelBuffer } from '@tsp/wse/GameEngine/drawing/PixelBuffer'
 import { WHITE } from '@tsp/wse/GameEngine/drawing/colors'
 
 export default class Fill extends GameObject {
