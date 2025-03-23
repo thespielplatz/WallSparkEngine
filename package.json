@@ -28,7 +28,7 @@
     "typecheck": "npx tsc",
     "lint": "eslint . --max-warnings 0",
     "check-exports": "attw --pack . --ignore-rules=cjs-resolves-to-esm",
-    "bump-version": "npm run build && npm run check-exports && npm run lint && changelogen --release",
+    "bump-version": "npm run build && npm run check-exports && npm run lint && changelogen --release && git push",
     "release": "npm run build && npm run check-exports && npm run lint && npm publish --access public"
   },
   "dependencies": {
