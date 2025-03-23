@@ -1,6 +1,24 @@
 # Changelog
 
 
+## v1.1.2
+
+[compare changes](https://github.com/thespielplatz/WallSparkEngine/compare/v1.1.1...v1.1.2)
+
+### 💅 Refactors
+
+- Organize exports ([d731241](https://github.com/thespielplatz/WallSparkEngine/commit/d731241))
+- Organize exports - again ([f19fc88](https://github.com/thespielplatz/WallSparkEngine/commit/f19fc88))
+
+### 🏡 Chore
+
+- **release:** V1.1.1 ([d43440d](https://github.com/thespielplatz/WallSparkEngine/commit/d43440d))
+- Remove double push from bump-version ([1076688](https://github.com/thespielplatz/WallSparkEngine/commit/1076688))
+
+### ❤️ Contributors
+
+- Thespielplatz <informatics@gmx.net>
+
 ## v1.1.1
 
 [compare changes](https://github.com/thespielplatz/WallSparkEngine/compare/v1.1.0...v1.1.1)
