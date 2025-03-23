@@ -27,16 +27,5 @@
     "paths": {
       "@tsp/wse/*": ["./src/*"],
     }
-/*
-    "paths": {
-      "@tsp/wse/*": ["./src/*"],
-    },
-    "types": ["node"],
-    "typeRoots": [
-      "types",
-      "node_modules/@types"
-    ],
-  }
-    */
   }
 }
