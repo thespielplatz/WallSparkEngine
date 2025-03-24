@@ -1,4 +1,4 @@
-import GameObject from '@tsp/wse/GameObjects/GameObject'
+import type GameObject from '@tsp/wse/GameObjects/GameObject'
 import { INVISIBLE } from '@tsp/wse/GameEngine/drawing/colors'
 
 export default class PixelBuffer {
