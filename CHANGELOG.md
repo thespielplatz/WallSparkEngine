@@ -1,6 +1,28 @@
 # Changelog
 
 
+## v1.2.0
+
+[compare changes](https://github.com/thespielplatz/WallSparkEngine/compare/v1.1.4...v1.2.0)
+
+### 🚀 Enhancements
+
+- Add rectangle gameobject ([b4d5c48](https://github.com/thespielplatz/WallSparkEngine/commit/b4d5c48))
+
+### 🩹 Fixes
+
+- **WledRenderer:** Render black pixel ([225835d](https://github.com/thespielplatz/WallSparkEngine/commit/225835d))
+- **typescript:** Include all source files ([712670a](https://github.com/thespielplatz/WallSparkEngine/commit/712670a))
+- **Blinker:** Draw black pixel ([7a3d2b3](https://github.com/thespielplatz/WallSparkEngine/commit/7a3d2b3))
+
+### 🏡 Chore
+
+- **Playground:** Add R, G and B rectangles ([9830249](https://github.com/thespielplatz/WallSparkEngine/commit/9830249))
+
+### ❤️ Contributors
+
+- Thespielplatz <informatics@gmx.net>
+
 ## v1.1.4
 
 [compare changes](https://github.com/thespielplatz/WallSparkEngine/compare/v1.1.3...v1.1.4)
