@@ -1,6 +1,19 @@
 # Changelog
 
 
+## v1.2.2
+
+[compare changes](https://github.com/thespielplatz/WallSparkEngine/compare/v1.2.1...v1.2.2)
+
+### 🏡 Chore
+
+- **release:** V1.2.1 ([1b31e4b](https://github.com/thespielplatz/WallSparkEngine/commit/1b31e4b))
+- **GameEngine:** Update streams to node:events ([a69ff00](https://github.com/thespielplatz/WallSparkEngine/commit/a69ff00))
+
+### ❤️ Contributors
+
+- Thespielplatz <informatics@gmx.net>
+
 ## v1.2.1
 
 [compare changes](https://github.com/thespielplatz/WallSparkEngine/compare/v1.2.0...v1.2.1)
