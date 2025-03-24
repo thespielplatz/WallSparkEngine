@@ -16,5 +16,6 @@ export { default as Time } from './GameObjects/Animations/Time'
 
 export { default as Fill } from './GameObjects/Drawing/Fill'
 export { default as Text } from './GameObjects/Drawing/Text'
+export { default as Rectangle } from './GameObjects/Drawing/Rectangle'
 
 export { default as GameEngineController } from './GameObjects/Logic/GameEngineController'
