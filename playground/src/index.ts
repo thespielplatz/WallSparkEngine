@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { colors, Config, Fill, GameEngine, Rainbow, Time } from '@thespielplatz/wall-spark-engine'
+import { colors, Config, Fill, GameEngine, Rainbow, Rectangle, Time } from '@thespielplatz/wall-spark-engine'
 
 console.info('Playground Example: Rainbow Clock')
 
@@ -25,6 +25,9 @@ const time = new Time({
 
 gameEngine.addGameObject(blackBackground)
 gameEngine.addGameObject(rainbow)
+gameEngine.addGameObject(new Rectangle({ x: 0, y: 0, width: 5, height: 5, color: colors.RED }))
+gameEngine.addGameObject(new Rectangle({ x: 5, y: 0, width: 5, height: 5, color: colors.GREEN }))
+gameEngine.addGameObject(new Rectangle({ x: 10, y: 0, width: 5, height: 5, color: colors.BLUE }))
 gameEngine.addGameObject(time)
 
 gameEngine.start()
