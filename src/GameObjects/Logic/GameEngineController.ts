@@ -1,4 +1,4 @@
-import GameEngine from '@tsp/wse/GameEngine/GameEngine'
+import type GameEngine from '@tsp/wse/GameEngine/GameEngine'
 import GameObject from '@tsp/wse/GameObjects/GameObject'
 import { CronJob, sendAt as cronSendAt } from 'cron'
 import { z } from 'zod'

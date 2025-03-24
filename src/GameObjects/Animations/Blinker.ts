@@ -1,6 +1,5 @@
-import PixelBuffer from '@tsp/wse/GameEngine/drawing/PixelBuffer'
-import GameObject from '../GameObject'
-
+import type PixelBuffer from '@tsp/wse/GameEngine/drawing/PixelBuffer'
+import GameObject from '@tsp/wse/GameObjects/GameObject'
 export default class Blinker extends GameObject {
   private colors: number[]
   private wait: number

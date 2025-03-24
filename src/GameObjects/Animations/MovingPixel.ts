@@ -1,5 +1,5 @@
 import GameObject from '@tsp/wse/GameObjects/GameObject'
-import PixelBuffer from '@tsp/wse/GameEngine/drawing/PixelBuffer'
+import type PixelBuffer from '@tsp/wse/GameEngine/drawing/PixelBuffer'
 
 export default class MovingPixel extends GameObject {
   private step = 0
