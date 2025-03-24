@@ -27,7 +27,7 @@ export default class Blinker extends GameObject {
 
   override async draw(pixelBuffer: PixelBuffer) {
     const color = this.colors[this.colorIndex]
-    if (color) {
+    if (color != undefined) {
       pixelBuffer.fill(color)
     }
   }
