@@ -4,7 +4,7 @@ import PixelBuffer from '@tsp/wse/GameEngine/drawing/PixelBuffer'
 import AbstractRenderer from '@tsp/wse/GameEngine/renderer/AbstractRenderer'
 import ConsoleRenderer from '@tsp/wse/GameEngine/renderer/ConsoleRenderer'
 import WledRenderer from '@tsp/wse/GameEngine/renderer/WledRenderer/WledRenderer'
-import { EventEmitter } from 'stream'
+import { EventEmitter } from 'node:events'
 
 const sleep = (timeout:number) => new Promise(res => setTimeout(res, timeout))
 
