@@ -1,6 +1,19 @@
 # Changelog
 
 
+## v1.2.1
+
+[compare changes](https://github.com/thespielplatz/WallSparkEngine/compare/v1.2.0...v1.2.1)
+
+### 🏡 Chore
+
+- Remove cirular dependcy of GameObject ([950bc3c](https://github.com/thespielplatz/WallSparkEngine/commit/950bc3c))
+- Update imports ([4fea369](https://github.com/thespielplatz/WallSparkEngine/commit/4fea369))
+
+### ❤️ Contributors
+
+- Thespielplatz <informatics@gmx.net>
+
 ## v1.2.0
 
 [compare changes](https://github.com/thespielplatz/WallSparkEngine/compare/v1.1.4...v1.2.0)
